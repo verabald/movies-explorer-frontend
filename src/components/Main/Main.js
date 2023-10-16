@@ -9,11 +9,11 @@ import './Main.css';
 function Main() {
   return (
     <main className="main">
-      <AboutMe />
+      <Promo />
       <AboutProject />
+      <AboutMe />
       <NavTab />
       <Portfolio />
-      <Promo />
       <Techs />
     </main>
   );
