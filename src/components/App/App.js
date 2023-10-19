@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
+import './App.css';
 import '../../index.css';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import Header from '../Header/Header';

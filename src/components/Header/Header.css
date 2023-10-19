@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #073042;
+    background-color: #073042;
 }
 
 .header__link {
@@ -35,7 +35,7 @@
     margin: 0;
     padding: 8px 20px 8px;
     color: #000000;
-    background: #3DDC84;
+    background-color: #3DDC84;
     font-family: 'Inter';
     border-radius: 3px;
     font-style: normal;
@@ -49,7 +49,7 @@
 }
 
 .header__button-reg {
-    margin: 0 50px 0 0;
+    margin: 0 30px 0 0;
     padding: 0;
     color: #ffffff;
     font-family: 'Inter';
