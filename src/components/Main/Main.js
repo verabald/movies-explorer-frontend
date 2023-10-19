@@ -11,10 +11,10 @@ function Main() {
     <main className="main">
       <Promo />
       <AboutProject />
-      <AboutMe />
-      <NavTab />
-      <Portfolio />
       <Techs />
+      <AboutMe />
+      <Portfolio />
+      <NavTab />
     </main>
   );
 }

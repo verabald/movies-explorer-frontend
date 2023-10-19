@@ -40,13 +40,18 @@
 }
 
 .about-project__box {
+    grid-column-start: 1;
+    grid-column-end: 3;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 25% 75%;
 }
 
 .about-project__row {
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     max-height: 36px;
     font-family: 'Inter';
     font-size: 14px;
@@ -56,8 +61,9 @@
 }
 
 .about-project__caption {
-    grid-column-start: 2;
-    grid-column-end: 4;
+    min-height: 127px;
+    grid-row-start: 2;
+    grid-row-end: 2;
     color: #8B8B8B;
     font-family: 'Inter';
     font-size: 14px;

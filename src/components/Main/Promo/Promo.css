@@ -38,6 +38,9 @@
     max-height: 36px;
     margin: 146px 0 75px 0;
     padding: 20px 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #ffffff;
     font-family: 'Inter';
     background-color: transparent;
