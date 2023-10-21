@@ -32,7 +32,16 @@ function App() {
 
           <Route path="/signin" element={<Login />}></Route>
 
-          <Route path="/movies" element={<Movies />}></Route>
+          <Route
+            path="/movies"
+            element={
+              <>
+                <Header />
+                <Movies />
+                <Footer />
+              </>
+            }
+          ></Route>
 
           <Route path="/saved-movies" element={<SavedMovies />}></Route>
 
