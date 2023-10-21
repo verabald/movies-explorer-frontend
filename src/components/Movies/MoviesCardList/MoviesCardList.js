@@ -1,7 +1,14 @@
+import MoviesCard from '../MoviesCard/MoviesCard';
 import './MoviesCardList.css';
 
-function MoviesCardList() {
-  return <ul className="movies-list"></ul>;
+function MoviesCardList({movies}) {
+  return (
+    <ul className="movies-list">
+      {movies.map(() => (
+        <MoviesCard />
+      ))}
+    </ul>
+  );
 }
 
 export default MoviesCardList;
