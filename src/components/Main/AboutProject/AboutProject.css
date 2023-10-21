@@ -74,14 +74,14 @@
     font-weight: 500;
     line-height: 1.45;
     text-align: center;
-}
+} 
 
-.about-project__row_color {
+.about-project__row_color_green {
     color: #000000;
     background-color: #3DDC84;
 }
 
-.about-project__row_black {
+.about-project__row_color_black {
     color: #ffffff;
     background-color: #303030;
 }

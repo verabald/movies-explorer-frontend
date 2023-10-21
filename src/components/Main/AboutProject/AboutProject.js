@@ -19,8 +19,8 @@ function AboutProject() {
         </p>
       </p>
       <div className="about-project__box">
-        <p className="about-project__row about-project__row_color">1 неделя</p>
-        <p className="about-project__row about-project__row_black">4 недели</p>
+        <p className="about-project__row about-project__row_color_green">1 неделя</p>
+        <p className="about-project__row about-project__row_color_black">4 недели</p>
         <caption className="about-project__caption">Back-end</caption>
         <caption className="about-project__caption">Front-end</caption>
       </div>

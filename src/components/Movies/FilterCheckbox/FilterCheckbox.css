@@ -1,0 +1,38 @@
+.checkbox {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+}
+
+.checkbox__tumb_type_active {
+	position: absolute;
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+
+.checkbox__tumb_type_disactive {
+	position: relative;
+	display: inline-block;
+	width: 36px;
+	height: 20px;
+	border-radius: 20px;
+	vertical-align: sub;
+	margin-right: 12px;
+}
+
+.checkbox__tumb_type_disactive::before {
+	position: absolute;
+	content: '';
+	width: 36px;
+	height: 20px;
+	background-image: url('../../../images/movies-smalltumboff.svg');
+	transition: all .3s ease-in-out;
+}
+
+
+.checkbox__tumb_type_active:checked + .checkbox__tumb_type_disactive::before {
+	background-image: url('../../../images/movies-smalltumb.svg');
+}
