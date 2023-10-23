@@ -1,21 +1,19 @@
+import { Link, useLocation } from 'react-router-dom';
+import Navigation from '../Navigation/Navigation';
 import './Header.css';
 import logo from '../../images/header-logo.svg';
 
-function Header() {
+function Header({isSigned}) {
+  const location = useLocation();
+
   return (
-    <header className="header">
-      <a
-        className="header__link"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+    <header
+      className={`header ${location.pathname !== '/' ? 'header_dark' : ''}`}
+    >
+      <Link className="header__link" alt="Логотип приложения" to="/">
         <img className="header__logo" src={logo} alt="Логотип" />
-      </a>
-      <div className="header__box">
-        <button className="header__button-reg">Регистрация</button>
-        <button className="header__button-log">Войти</button>
-      </div>
+      </Link>
+      <Navigation isSigned={isSigned} />
     </header>
   );
 }

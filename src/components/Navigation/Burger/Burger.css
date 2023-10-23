@@ -1,0 +1,19 @@
+.burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .burger__list {
+    list-style: none;
+    display: none;
+  }
+  
+  .burger-menu__item {
+    padding: 10px;
+  }
+  
+  .burger_opened .burger__list {
+    display: block;
+  }
+  

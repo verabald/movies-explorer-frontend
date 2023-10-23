@@ -13,6 +13,23 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
 
 function App() {
+  const navigate = useNavigate();
+  const [isSigned, setSign] = useState(false);
+
+  function handleSignUp() {
+    navigate('/signin', { replace: true });
+  }
+
+  function handleSignIn() {
+    setSign(true);
+    navigate('/movies', { replace: true });
+  }
+
+  function handleSignOut() {
+    setSign(false);
+    navigate('/signin', { replace: true });
+  }
+
   return (
     <CurrentUserContext.Provider>
       <div className="page">
@@ -21,33 +38,52 @@ function App() {
             path="/"
             element={
               <>
-                <Header />
+                <Header isSigned={isSigned}/>
                 <Main />
                 <Footer />
               </>
             }
           ></Route>
 
-          <Route path="/signup" element={<Register />}></Route>
+          <Route
+            path="/signup"
+            element={<Register onSignUp={handleSignUp} />}
+          ></Route>
 
-          <Route path="/signin" element={<Login />}></Route>
+          <Route
+            path="/signin"
+            element={<Login onSignIn={handleSignIn} />}
+          ></Route>
 
           <Route
             path="/movies"
             element={
               <>
-                <Header />
+                <Header isSigned={isSigned}/>
                 <Movies />
                 <Footer />
               </>
             }
           ></Route>
 
-          <Route path="/saved-movies" element={<SavedMovies />}></Route>
+          <Route
+            path="/saved-movies"
+            element={
+              <>
+                <Header isSigned={isSigned}/>
+                <SavedMovies />
+                <Footer />
+              </>
+            }
+          ></Route>
 
-          <Route path="/profile" element={<Profile />}></Route>
+          <Route
+            path="/profile"
+            element={<Profile onSignOut={handleSignOut} isSigned={isSigned}/>}
+          ></Route>
 
-          <Route path="*" />
+          <Route path="*" element={<Navigate to="/pagenotfound" replace />} />
+          {/* <Route path="/pagenotfound" element={<PageNotFound />} /> */}
         </Routes>
       </div>
     </CurrentUserContext.Provider>

@@ -9,6 +9,10 @@
     background-color: #073042;
 }
 
+.header_dark {
+    background-color: #202020;
+}
+
 .header__link {
     margin: 18px 0 18px 0;
     padding: 0;
@@ -19,46 +23,6 @@
 .header__logo {
     max-width: 38px;
     max-height: 38px;
-}
-
-.header__box {
-    max-width: 203px;
-    min-height: 32px;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-}
-
-.header__button-log {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 8px 20px 8px;
-    color: #000000;
-    background-color: #3DDC84;
-    border-radius: 3px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-}
-
-.header__button-reg {
-    margin: 0 30px 0 0;
-    padding: 0;
-    color: #ffffff;
-    background-color: transparent;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1;
-    text-align: center;
-    cursor: pointer;
-    border: none;
 }
 
 /* @media screen and (max-width: 1100px) {
