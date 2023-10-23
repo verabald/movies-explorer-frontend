@@ -10,7 +10,7 @@ function Header({isSigned}) {
     <header
       className={`header ${location.pathname !== '/' ? 'header_dark' : ''}`}
     >
-      <Link className="header__link" alt="Логотип приложения" to="/">
+      <Link className="header__link" alt="Зелёный круг с белой буквой С внутри" to="/">
         <img className="header__logo" src={logo} alt="Логотип" />
       </Link>
       <Navigation isSigned={isSigned} />
