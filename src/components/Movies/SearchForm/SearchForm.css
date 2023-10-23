@@ -3,7 +3,6 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    background-color: #202020;
 }
 
 .search__form {

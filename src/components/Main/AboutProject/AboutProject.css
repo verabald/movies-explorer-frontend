@@ -6,7 +6,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0 40px;
-    background-color: #202020;
 }
 
 .about-project__head {
