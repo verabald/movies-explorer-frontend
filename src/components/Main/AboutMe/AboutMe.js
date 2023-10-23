@@ -16,7 +16,7 @@ function AboutMe() {
       </p>
       <a
         className="about-me__link"
-        href="#"
+        href="https://github.com/verabald"
         target="_blank"
         rel="noopener noreferrer"
       >

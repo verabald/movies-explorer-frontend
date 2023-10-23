@@ -11,6 +11,7 @@ import Login from '../Login/Login';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
+import PageNotFound from '../PageNotFound/PageNotFound';
 
 function App() {
   const navigate = useNavigate();
@@ -83,7 +84,7 @@ function App() {
           ></Route>
 
           <Route path="*" element={<Navigate to="/pagenotfound" replace />} />
-          {/* <Route path="/pagenotfound" element={<PageNotFound />} /> */}
+          <Route path="/pagenotfound" element={<PageNotFound />} />
         </Routes>
       </div>
     </CurrentUserContext.Provider>

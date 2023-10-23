@@ -8,7 +8,7 @@ function Portfolio() {
         <li className="portfolio__item">
           <a
             className="portfolio__link"
-            href="#"
+            href="https://github.com/verabald/russian-travel"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -18,7 +18,7 @@ function Portfolio() {
         <li className="portfolio__item">
           <a
             className="portfolio__link"
-            href="#"
+            href="https://github.com/verabald/russian-travel"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -28,7 +28,7 @@ function Portfolio() {
         <li className="portfolio__item">
           <a
             className="portfolio__link"
-            href="#"
+            href="https://github.com/verabald/react-mesto-auth"
             target="_blank"
             rel="noopener noreferrer"
           >

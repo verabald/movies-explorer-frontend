@@ -10,7 +10,7 @@ function Footer() {
         <li className="footer__item">
           <a
             className="footer__link"
-            href="#"
+            href="https://practicum.yandex.ru/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -20,7 +20,7 @@ function Footer() {
         <li className="footer__item">
           <a
             className="footer__link"
-            href="#"
+            href="https://github.com/verabald"
             target="_blank"
             rel="noopener noreferrer"
           >

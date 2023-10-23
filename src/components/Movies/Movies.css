@@ -1,23 +1,23 @@
 .movies__button {
+	width: 25%;
 	margin: 80px auto;
 	padding: 11px 0 9px;
     display: block;
-	background-color: #2F2F2F;
-	border: none;
+	background-color: transparent;
+	border: solid 1px #424242;
     border-radius: 6px;
 	color: #ffffff;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 15px;
-    letter-spacing: 0px;
-    text-align: center;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 15px;
+	letter-spacing: 0px;
+	text-align: center;
 	cursor: pointer;
-	transition: all .2s ease;
-	width: 35%;
+	transition: all .2s ease-out;
 }
 
 .movies__button:hover {
-	opacity: .8;
+	opacity: .7;
 }
 
 @media screen and (max-width: 1024px) {
