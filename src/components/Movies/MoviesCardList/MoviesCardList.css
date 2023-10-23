@@ -6,6 +6,7 @@
     grid-template-columns: repeat(auto-fit, 270px);
     justify-content: center;
     gap: 32px 20px;
+    background-color: #202020;
     list-style: none;
 }
 

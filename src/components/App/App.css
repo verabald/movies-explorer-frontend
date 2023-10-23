@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 	margin: 0 auto;
     height: 100%;
-	background: linear-gradient(to bottom, #073042,#202020);
+	background-color: #202020;
 	font-family: 'Inter', Arial, sans-serif;
 	-moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;

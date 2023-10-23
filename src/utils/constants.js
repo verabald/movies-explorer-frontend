@@ -1,3 +1,5 @@
+const film = new URL('../images/movie.jpg', import.meta.url);
+
 const movies = [
 	{
 		_id: '1',
@@ -8,7 +10,7 @@ const movies = [
 		duration: '1ч42м',
 		year: '2023',
 		description: 'Описание фильма',
-		image: '../images/movie.jpg',
+		image: film,
 	},
 	{
 		_id: '2',
@@ -19,7 +21,7 @@ const movies = [
 		duration: '1ч42м',
 		year: '2023',
 		description: 'Описание фильма',
-		image: '../images/movie.jpg',
+		image: film,
 	},
 	{
 		_id: '3',
@@ -30,7 +32,7 @@ const movies = [
 		duration: '1ч42м',
 		year: '2023',
 		description: 'Описание фильма',
-		image: '../images/movie.jpg',
+		image: film,
 	},
 	{
 		_id: '4',
@@ -41,7 +43,7 @@ const movies = [
 		duration: '1ч42м',
 		year: '2023',
 		description: 'Описание фильма',
-		image: '../images/movie.jpg',
+		image: film,
 	},
     {
 		_id: '5',
@@ -52,7 +54,7 @@ const movies = [
 		duration: '1ч42м',
 		year: '2023',
 		description: 'Описание фильма',
-		image: '../images/movie.jpg',
+		image: film,
 	},
 	{
 		_id: '6',
@@ -63,7 +65,7 @@ const movies = [
 		duration: '1ч42м',
 		year: '2023',
 		description: 'Описание фильма',
-		image: '../images/movie.jpg',
+		image: film,
 	},
 ]
 
