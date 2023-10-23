@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     display: flex;
+    list-style: none;
 }
 
 .nav-logout__link-log {
@@ -22,6 +23,7 @@
     text-decoration: none;
     cursor: pointer;
     border: none;
+    transition: all .2s ease-out;
 }
 
 .nav-logout__link-reg {
@@ -34,6 +36,16 @@
     font-size: 12px;
     line-height: 1;
     text-align: center;
+    text-decoration: none;
     cursor: pointer;
     border: none;
+    transition: all .2s ease-out;
+}
+
+.nav-logout__link-log:hover {
+    opacity: .8;
+}
+
+.nav-logout__link-reg:hover {
+    opacity: .7;
 }

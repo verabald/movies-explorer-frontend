@@ -1,0 +1,56 @@
+.nav-login {
+    min-width: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-login__list {
+    margin: 0;
+	padding: 0;
+    display: flex;
+    gap: 16px;
+    list-style: none;
+}
+
+.nav-login__link {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-decoration: none;
+    transition: all .2s ease-out;
+}
+
+.nav-login__icon {
+    width: 26px;
+	height: 26px;
+	background-image: url('../../../images/nav-profile.svg');
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+	background-color: #313131;
+    border-radius: 50px;
+}
+
+.nav-login__icon_light {
+    background-color: #0F4157;
+}
+
+.nav-login__link_path_movies {
+    font-weight: 500;
+}
+
+.nav-login__link_path_profile {
+    font-weight: 500;
+}
+
+.nav-login__link:hover {
+    opacity: .7;
+}
