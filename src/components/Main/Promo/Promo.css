@@ -37,11 +37,11 @@
 
 .promo__button {
     max-width: 129px;
-    max-height: 36px;
+    min-height: 36px;
     margin: 146px 0 75px 0;
-    padding: 10px 20px 10px;
     display: flex;
     align-items: center;
+    justify-content: center;
     white-space: nowrap;
     color: #ffffff;
     background-color: transparent;
