@@ -1,6 +1,10 @@
+import { useLocation } from 'react-router-dom';
+import MoviesCardRadio from './MoviesCardRadio/MoviesCardRadio';
+import MoviesCardButton from './MoviesCardButton/MoviesCardButton';
 import './MoviesCard.css';
 
 function MoviesCard({ movie }) {
+  const { pathname } = useLocation();
   return (
     <li className="movies-card">
       <img
@@ -13,12 +17,7 @@ function MoviesCard({ movie }) {
           <h2 className="movies-card__title"> {movie.nameRU}</h2>
           <p className="movies-card__caption"> {movie.duration}</p>
         </div>
-        <label className="movies-card__radio-label">
-          <input
-            className="movies-card__radio  movies-card__radio_type_default"
-            type="radio" />
-          <span className="movies-card__radio movies-card__radio_type_design" />
-        </label>
+        {pathname === '/movies' ? <MoviesCardRadio /> : <MoviesCardButton />}
       </div>
     </li>
   );

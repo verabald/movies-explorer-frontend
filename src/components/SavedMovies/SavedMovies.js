@@ -1,5 +1,5 @@
 import SearchForm from '../Movies/SearchForm/SearchForm';
-import MoviesCardList from './MoviesCardList/MoviesCardList';
+import MoviesCardList from '../Movies/MoviesCardList/MoviesCardList';
 import movies from '../../utils/constants';
 import './SavedMovies.css';
 
