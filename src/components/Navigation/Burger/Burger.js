@@ -9,18 +9,18 @@ function Burger({ isOpen, isClose }) {
         onClick={isClose}
         type="button"
       ></button>
-      <ul class="burger__list">
-        <li class="burger__item">
+      <ul className="burger__list">
+        <li className="burger__item">
           <Link className="burger__link" to="/">
             Главная
           </Link>
         </li>
-        <li class="burger__item">
+        <li className="burger__item">
           <Link className="burger__link" to="/movies">
             Фильмы
           </Link>
         </li>
-        <li class="burger__item">
+        <li className="burger__item">
           <Link className="burger__link" to="/saved-movies">
             Сохранённые фильмы
           </Link>
