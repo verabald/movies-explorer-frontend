@@ -1,8 +1,8 @@
 .nav-login {
-    min-width: 650px;
+    min-width: 675px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .nav-login__list {
