@@ -44,3 +44,15 @@
         transition: opacity .2s ease-out;
     }
 }
+
+@media screen and (max-width: 769px) {
+	.page-not-found {
+		margin: 408px 0 222px;
+	}
+  }
+
+@media screen and (max-width: 425px) {
+	.page-not-found {
+		margin: 329px 0 30px;
+	}
+  }

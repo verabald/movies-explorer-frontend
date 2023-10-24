@@ -137,3 +137,9 @@
         transition: opacity .2s ease-out;
     }
 }
+
+@media screen and (max-width: 769px) {
+	.login__logo-link {
+        margin-top: 232px;
+    }
+  }

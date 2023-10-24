@@ -104,3 +104,9 @@
         transition: opacity 0.2s ease-in;
     }
 }
+
+@media screen and (max-width: 769px) {
+	.profile__title {
+        margin: 236px 0 80px 0;
+    }    
+  }

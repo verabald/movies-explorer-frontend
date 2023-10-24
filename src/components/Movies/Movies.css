@@ -21,3 +21,9 @@
         transition: opacity .2s ease-out;
     }
 }
+
+@media screen and (max-width: 769px) {
+	.movies__button {
+		width: 320px;
+	}
+  }
