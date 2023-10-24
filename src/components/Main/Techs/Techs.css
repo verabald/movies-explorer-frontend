@@ -75,6 +75,34 @@
 
 @media screen and (max-width: 1024px) {
     .techs  {
+        min-height: 567px;
         padding: 0 50px 0;
+    }
+
+    .techs__head {
+        margin-top: 90px;
+        padding-bottom: 23px;
+    }
+    
+    .techs__title {
+        margin-top: 80px;
+    }
+    
+    .techs__text {
+        margin-top: 22px;
+        padding: 0;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .techs__tools {
+        margin: 83px 0 90px 0;
+    }
+    
+    .techs__tool {
+        min-height: 57px;
+        min-width: 84px;
+        font-size: 12px;
+        line-height: 15px;
     }
   }  

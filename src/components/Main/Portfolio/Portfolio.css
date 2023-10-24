@@ -55,3 +55,21 @@
         transition: opacity .2s ease-out;
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .portfolio  {
+        padding: 0 50px 0;
+    }
+    .portfolio__head {
+        margin-top: 91px;
+    }
+    
+    .portfolio__list {
+        margin: 25px 0 90px 0;
+    }
+    
+    .portfolio__link {
+        font-size: 28px;
+        line-height: 50px;
+    }
+  }  

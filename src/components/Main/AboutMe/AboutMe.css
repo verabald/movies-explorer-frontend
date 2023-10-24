@@ -100,24 +100,39 @@
 
 @media screen and (max-width: 1024px) {
     .about-me  {
+        min-height: 500px;
         padding: 0 50px 0;
     }
 
+    .about-me__head  {
+        margin-top: 90px;
+    }
+
     .about-me__text {
-        max-width: 364px;
+        min-width: 360px;
         margin-top: 20px;
         font-size: 12px;
         line-height: 18px;
     }
 
     .about-me__name {
+        margin-top: 66px;
         font-size: 40px;
         line-height: 40px;
     }
     
     .about-me__subtitle {
-        margin-top: 16px 0 0 0;
+        margin-top: 16px;
         font-size: 12px;
         line-height: 18px;
+    }
+
+    .about-me__link {
+        margin-top: 87px;
+    }
+
+    .about-me__img {
+        max-width: 255px;
+        max-height: 307px;
     }
   }  

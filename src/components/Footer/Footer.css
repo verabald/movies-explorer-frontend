@@ -59,3 +59,9 @@
         transition: opacity .2s ease-out;
 }
 }
+
+@media screen and (max-width: 1024px) {
+    .footer  {
+        padding: 0 30px 0;
+    }
+}
