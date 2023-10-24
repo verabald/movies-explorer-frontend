@@ -97,6 +97,7 @@
     letter-spacing: 0em;
     text-align: center;
     align-self: center;
+    cursor: pointer;
 }
 
 .register__caption {
@@ -120,6 +121,7 @@
     letter-spacing: 0em;
     text-align: center;
     text-decoration: none;
+    cursor: pointer;
   }
   
   @media (hover: hover) {

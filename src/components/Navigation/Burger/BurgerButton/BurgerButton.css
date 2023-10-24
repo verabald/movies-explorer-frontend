@@ -1,6 +1,7 @@
 .burger-button {
-	display: none;
+	margin: 0;
 	padding: 0;
+	display: none;
 	background-color: transparent;
 	border: 0;
     background-image: url('../../../../images/burger-close.svg');
@@ -8,12 +9,15 @@
     background-repeat: no-repeat;
     background-size: 22px 22px;
     cursor: pointer;
-	transition: all .2s ease-out;
 }
 
-.burger-button:hover {
-	opacity: .8;
+@media (hover: hover) {
+    .burger-button:hover {
+        opacity: .8;
+        transition: opacity .2s ease-out;
+    }
 }
+
 
 @media screen and (max-width: 1024px) {
 	.burger-button {

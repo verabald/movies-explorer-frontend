@@ -73,6 +73,7 @@
     text-align: center;
     align-self: center;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .profile__close {

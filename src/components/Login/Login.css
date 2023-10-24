@@ -97,6 +97,7 @@
     letter-spacing: 0em;
     text-align: center;
     align-self: center;
+    cursor: pointer;
 }
 
 .login__caption {
@@ -120,18 +121,19 @@
     letter-spacing: 0em;
     text-align: center;
     text-decoration: none;
+    cursor: pointer;
   }
   
   @media (hover: hover) {
     .login__button-login:hover {
       opacity: 0.7;
-      transition: opacity 0.2s ease-in;
+      transition: opacity .2s ease-out;
     }
   }
 
 @media (hover: hover) {
     .login__button:hover {
         opacity: 0.8;
-        transition: opacity 0.2s ease-in;
+        transition: opacity .2s ease-out;
     }
 }

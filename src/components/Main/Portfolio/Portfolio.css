@@ -47,9 +47,11 @@
 	background-position: center right;
 	background-size: 18px 18px;
     text-decoration: none;
-    transition: all .2s ease-out;
 }
 
-.portfolio__link:hover {
-	opacity: .7;
+@media (hover: hover) {
+    .portfolio__link:hover {
+        opacity: .7;
+        transition: opacity .2s ease-out;
+    }
 }

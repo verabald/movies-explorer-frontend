@@ -7,27 +7,27 @@
 }
 
 .checkbox__tumb_type_active {
-	position: absolute;
 	width: 0;
 	height: 0;
+	position: absolute;
 	opacity: 0;
 }
 
 .checkbox__tumb_type_disactive {
-	position: relative;
-	display: inline-block;
 	width: 36px;
 	height: 20px;
+	position: relative;
+	display: inline-block;
 	border-radius: 20px;
 	vertical-align: sub;
 	margin-right: 12px;
 }
 
 .checkbox__tumb_type_disactive::before {
-	position: absolute;
-	content: '';
 	width: 36px;
 	height: 20px;
+	position: absolute;
+	content: '';
 	background-image: url('../../../images/movies-smalltumboff.svg');
 	background-position: center;
     background-repeat: no-repeat;
