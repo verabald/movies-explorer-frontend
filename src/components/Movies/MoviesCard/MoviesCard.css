@@ -60,12 +60,34 @@
     overflow: hidden;
 }
 
-.movies-card__button {
-    width: 16px;
-    height: 16px;
-    margin: 0;
-    background-image: url(../../../images/movies-saveoff.svg);
-    background-position: center;
+.movies-card__radio_type_default {
+	width: 0;
+	height: 0;
+	position: absolute;
+	opacity: 0;
+}
+
+.movies-card__radio_type_design {
+	width: 16px;
+	height: 16px;
+	position: relative;
+	display: inline-block;
+    cursor: pointer;
+}
+
+.movies-card__radio_type_design::before {
+    padding: 5px 0 0 0;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	content: '';
+	background-image: url('../../../images/movies-saveoff.svg');
+	background-position: center;
     background-repeat: no-repeat;
-    background-size: 16px 16px;
+	transition: all .2s ease-out;
+}
+
+
+.movies-card__radio_type_default:checked + .movies-card__radio_type_design::before {
+	background-image: url('../../../images/movies-saveon.svg');
 }

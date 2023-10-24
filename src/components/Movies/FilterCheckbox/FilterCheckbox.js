@@ -4,10 +4,10 @@ function FilterCheckbox() {
   return (
     <label className="checkbox">
       <input
-        className="checkbox__tumb checkbox__tumb_type_active"
+        className="checkbox__tumb checkbox__tumb_type_default"
         type="checkbox"
       />
-      <span className=" checkbox__tumb checkbox__tumb_type_disactive" />
+      <span className=" checkbox__tumb checkbox__tumb_type_design" />
       Короткометражки
     </label>
   );

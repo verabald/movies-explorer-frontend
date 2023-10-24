@@ -13,7 +13,12 @@ function MoviesCard({ movie }) {
           <h2 className="movies-card__title"> {movie.nameRU}</h2>
           <p className="movies-card__caption"> {movie.duration}</p>
         </div>
-        <button className="movies-card__button" />
+        <label className="movies-card__radio-label">
+          <input
+            className="movies-card__radio  movies-card__radio_type_default"
+            type="radio" />
+          <span className="movies-card__radio movies-card__radio_type_design" />
+        </label>
       </div>
     </li>
   );

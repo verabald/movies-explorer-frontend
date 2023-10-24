@@ -6,14 +6,14 @@
     letter-spacing: 0em;
 }
 
-.checkbox__tumb_type_active {
+.checkbox__tumb_type_default {
 	width: 0;
 	height: 0;
 	position: absolute;
 	opacity: 0;
 }
 
-.checkbox__tumb_type_disactive {
+.checkbox__tumb_type_design {
 	width: 36px;
 	height: 20px;
 	position: relative;
@@ -23,7 +23,7 @@
 	margin-right: 12px;
 }
 
-.checkbox__tumb_type_disactive::before {
+.checkbox__tumb_type_design::before {
 	width: 36px;
 	height: 20px;
 	position: absolute;
@@ -36,6 +36,6 @@
 }
 
 
-.checkbox__tumb_type_active:checked + .checkbox__tumb_type_disactive::before {
+.checkbox__tumb_type_default:checked + .checkbox__tumb_type_design::before {
 	background-image: url('../../../images/movies-smalltumb.svg');
 }
