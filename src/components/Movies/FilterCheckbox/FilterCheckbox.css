@@ -39,3 +39,15 @@
 .checkbox__tumb_type_default:checked + .checkbox__tumb_type_design::before {
 	background-image: url('../../../images/movies-smalltumb.svg');
 }
+
+@media screen and (max-width: 769px) {
+    .checkbox {
+        display: flex;
+		flex-direction: row-reverse;
+		gap: 0 16px;
+    }
+
+	.checkbox__tumb_type_design {
+		margin-right: 0p;
+	}
+}

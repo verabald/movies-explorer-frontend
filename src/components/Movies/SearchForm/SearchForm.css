@@ -38,3 +38,15 @@
 	background-position: center center;
 	background-size: 34px 34px;
 }
+
+@media screen and (max-width: 1200px) {
+    .search__input {
+        min-width: 534px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .search {
+        padding: 0 30px 0;
+    }
+}

@@ -91,3 +91,9 @@
 .movies-card__radio_type_default:checked + .movies-card__radio_type_design::before {
 	background-image: url('../../../images/movies-saveon.svg');
 }
+
+@media screen and (max-width: 769px) {
+    .movies-card__image {
+        height: 190px;
+    }
+}
