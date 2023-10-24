@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 import './App.css';
 import '../../index.css';
@@ -39,7 +39,7 @@ function App() {
             path="/"
             element={
               <>
-                <Header isSigned={isSigned}/>
+                <Header isSigned={isSigned} />
                 <Main />
                 <Footer />
               </>
@@ -60,7 +60,7 @@ function App() {
             path="/movies"
             element={
               <>
-                <Header isSigned={isSigned}/>
+                <Header isSigned={isSigned} />
                 <Movies />
                 <Footer />
               </>
@@ -71,7 +71,7 @@ function App() {
             path="/saved-movies"
             element={
               <>
-                <Header isSigned={isSigned}/>
+                <Header isSigned={isSigned} />
                 <SavedMovies />
                 <Footer />
               </>
@@ -80,7 +80,7 @@ function App() {
 
           <Route
             path="/profile"
-            element={<Profile onSignOut={handleSignOut} isSigned={isSigned}/>}
+            element={<Profile onSignOut={handleSignOut} isSigned={isSigned} />}
           ></Route>
 
           <Route path="*" element={<Navigate to="/pagenotfound" replace />} />

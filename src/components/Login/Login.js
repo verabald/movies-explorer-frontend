@@ -3,7 +3,8 @@ import './Login.css';
 import logo from '../../images/header-logo.svg';
 
 function Login() {
-  return <section className="login">
+  return (
+    <section className="login">
       <div className="login__container">
         <Link
           className="login__logo-link"
@@ -37,8 +38,7 @@ function Login() {
               required
             />
           </label>
-          <span className="login__error" id="password-error">
-          </span>
+          <span className="login__error" id="password-error"></span>
           <button className="login__button">Войти</button>
         </form>
       </div>
@@ -48,7 +48,8 @@ function Login() {
           Регистрация
         </Link>
       </p>
-  </section>;
+    </section>
+  );
 }
 
 export default Login;

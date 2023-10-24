@@ -4,12 +4,14 @@ import movies from '../../utils/constants';
 import './SavedMovies.css';
 
 function SavedMovies() {
-  return <main className="saved-movies">
+  return (
     <main className="saved-movies">
-      <SearchForm />
-      <MoviesCardList movies={movies} />
+      <main className="saved-movies">
+        <SearchForm />
+        <MoviesCardList movies={movies} />
+      </main>
     </main>
-  </main>;
+  );
 }
 
 export default SavedMovies;

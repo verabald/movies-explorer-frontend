@@ -14,13 +14,18 @@ function AboutProject() {
       <p className="about-project__title">
         На выполнение диплома ушло 5 недель
         <p className="about-project__text">
-          У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было <br />
+          У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было{' '}
+          <br />
           соблюдать, чтобы успешно защититься.
         </p>
       </p>
       <div className="about-project__box">
-        <p className="about-project__row about-project__row_color_green">1 неделя</p>
-        <p className="about-project__row about-project__row_color_black">4 недели</p>
+        <p className="about-project__row about-project__row_color_green">
+          1 неделя
+        </p>
+        <p className="about-project__row about-project__row_color_black">
+          4 недели
+        </p>
         <caption className="about-project__caption">Back-end</caption>
         <caption className="about-project__caption">Front-end</caption>
       </div>

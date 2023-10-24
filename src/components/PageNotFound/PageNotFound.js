@@ -12,7 +12,7 @@ function PageNotFound() {
         Назад
       </button>
     </section>
-  )
-};
+  );
+}
 
 export default PageNotFound;

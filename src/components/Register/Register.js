@@ -51,8 +51,7 @@ function Register() {
               required
             />
           </label>
-          <span className="register__error" id="password-error">
-          </span>
+          <span className="register__error" id="password-error"></span>
           <button className="register__button">Зарегистрироваться</button>
         </form>
       </div>

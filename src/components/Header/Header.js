@@ -3,14 +3,18 @@ import Navigation from '../Navigation/Navigation';
 import './Header.css';
 import logo from '../../images/header-logo.svg';
 
-function Header({isSigned}) {
+function Header({ isSigned }) {
   const location = useLocation();
 
   return (
     <header
       className={`header ${location.pathname !== '/' ? 'header_dark' : ''}`}
     >
-      <Link className="header__link" alt="Зелёный круг с белой буквой С внутри" to="/">
+      <Link
+        className="header__link"
+        alt="Зелёный круг с белой буквой С внутри"
+        to="/"
+      >
         <img className="header__logo" src={logo} alt="Логотип" />
       </Link>
       <Navigation isSigned={isSigned} />
