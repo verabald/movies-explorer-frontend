@@ -28,6 +28,7 @@ function Burger({ isOpen, isClose }) {
       </ul>
       <Link className="burger__link burger__link_path_profile" to="/profile">
         Аккаунт
+        <div className="burger__icon"></div>
       </Link>
     </div>
   );

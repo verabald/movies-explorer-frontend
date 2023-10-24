@@ -56,3 +56,13 @@
         transition: opacity .2s ease-out;
     }
 }
+
+@media screen and (max-width: 1024px) {
+	.nav-login__list {
+		display: none;
+	}
+
+	.nav-login__box {
+		display: none;
+	}
+}

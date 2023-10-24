@@ -25,7 +25,7 @@ function Navigation({ isSigned }) {
           <BurgerButton onClick={handleOpenBurger} />
         </>
       )}
-      {/* <Burger isOpen={isOpen} isClose={handleCloseBurger} /> */}
+      <Burger isOpen={isOpen} isClose={handleCloseBurger} />
     </nav>
   );
 }
