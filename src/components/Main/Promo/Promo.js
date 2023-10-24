@@ -6,7 +6,7 @@ function Promo() {
   return (
     <section className="promo">
       <h1 className="promo__title">
-        Учебный проект студента <br /> факультета <br /> Веб-разработки.
+        Учебный проект студента факультета Веб-разработки.
       </h1>
       <img
         className="promo__pic"
@@ -15,7 +15,7 @@ function Promo() {
       />
       <div className="promo__box">
         <p className="promo__subtitle">
-          Листайте ниже, чтобы узнать больше про этот <br /> проект и его
+          Листайте ниже, чтобы узнать больше про этот проект и его
           создателя.
         </p>
         <Link
