@@ -15,8 +15,8 @@
 
 .movies-card-radio__input_type_design::before {
     padding: 5px 0 0 0;
-	width: 16px;
-	height: 16px;
+	width: 17px;
+	height: 17px;
 	position: absolute;
 	content: '';
 	background-image: url('../../../../images/movies-saveoff.svg');
