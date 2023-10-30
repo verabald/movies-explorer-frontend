@@ -1,30 +1,39 @@
 .burger-button {
-	width: 44px;
-	height: 44px;
-	margin: 15px 30px 0 0;
-	padding: 0;
-	display: none;
-	border: 0;
-	background-color: transparent;
-	background-image: url('../../../../images/burger-button.svg');
-	background-position: center;
-    background-repeat: no-repeat;
-	background-size: 44px 44px;
-	cursor: pointer;
+  width: 44px;
+  height: 44px;
+  margin: 15px 30px 0 0;
+  padding: 0;
+  display: none;
+  border: 0;
+  background-color: transparent;
+  background-image: url('../../../../images/burger-button.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 44px 44px;
+  cursor: pointer;
 }
 
 @media (hover: hover) {
-    .burger-button:hover {
-        opacity: 0.8;
-        transition: opacity 0.2s ease-in;
-    }
+  .burger-button:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-	.burger-button {
-		display: block;
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
+  .burger-button {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .burger-button {
+    width: 40px;
+    height: 43px;
+    margin-right: 14px;
+	background-size: 40px 43px;
+  }
 }

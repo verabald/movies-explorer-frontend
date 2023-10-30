@@ -16,7 +16,7 @@ function Burger({ isOpen, isClose }) {
           </Link>
         </li>
         <li className="burger__item">
-          <Link className="burger__link" to="/movies">
+          <Link className="burger__link burger__link_path_page" to="/movies">
             Фильмы
           </Link>
         </li>
