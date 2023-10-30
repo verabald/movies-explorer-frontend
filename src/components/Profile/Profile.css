@@ -1,112 +1,137 @@
 .profile {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile__container {
-    width: 410px;
-    min-height: 482px;
-    margin: auto;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+  width: 410px;
+  min-height: 482px;
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile__title {
-    margin: 74px 0 110px 0;
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 29px;
-    letter-spacing: 0em;
-    text-align: center;
+  margin: 74px 0 110px 0;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: center;
 }
 
 .profile__form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile__input-title {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: solid 1px #424242;
-    color: #ffffff;
-    font-size: 11px;
-    font-weight: 500;
-    line-height: 13px;
-    letter-spacing: 0em;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px #424242;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 13px;
+  letter-spacing: 0em;
 }
 
 .profile__input-title:last-of-type {
-    border: 0;
+  border: 0;
 }
 
 .profile__input {
-    min-height: 30px;
-    margin: 0;
-    padding: 15px 0;
-    box-sizing: border-box;
-    border: none;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 13px;
-    letter-spacing: 0em;
-    color: #ffffff;
-    background-color: transparent;
-    text-align: right;
+  min-height: 30px;
+  margin: 0;
+  padding: 15px 0;
+  box-sizing: border-box;
+  border: none;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0em;
+  color: #ffffff;
+  background-color: transparent;
+  text-align: right;
 }
 
 .profile__button {
-    margin: 200px 0 16px 0;
-    background-color: transparent;
-    color: #ffffff;
-    border: none;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 0px;
-    text-align: center;
-    align-self: center;
-    text-decoration: none;
-    cursor: pointer;
+  margin: 200px 0 16px 0;
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: center;
+  align-self: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .profile__close {
-    margin: 0;
-    padding: 0;
-    color:#EE3465;
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 16px;
-    letter-spacing: 0em;
-    text-align: center;
-    align-self: center;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-
-@media (hover: hover) {
-    .profile__button:hover {
-        opacity: 0.7;
-        transition: opacity 0.2s ease-in;
-    }
+  margin: 0;
+  padding: 0;
+  color: #ee3465;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  align-self: center;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 @media (hover: hover) {
-    .profile__close:hover {
-        opacity: 0.7;
-        transition: opacity 0.2s ease-in;
-    }
+  .profile__button:hover {
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in;
+  }
+}
+
+@media (hover: hover) {
+  .profile__close:hover {
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in;
+  }
 }
 
 @media screen and (max-width: 769px) {
-	.profile__title {
-        margin: 236px 0 80px 0;
-    }    
+  .profile__title {
+    margin: 236px 0 80px 0;
   }
+}
+
+@media screen and (max-width: 426px) {
+  .profile__container {
+    width: 260px;
+    min-height: 552px;
+  }
+  
+  .profile__title {
+    margin: 70px 0 58px 0;
+  }
+
+  .profile__input {
+    padding: 18px 0;
+  }
+  
+  .profile__button {
+    margin-top: 362px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  .profile__close {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

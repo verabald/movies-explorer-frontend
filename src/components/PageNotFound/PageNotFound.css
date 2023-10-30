@@ -1,58 +1,75 @@
 .page-not-found {
-	margin: 246px 0 60px;
+  margin: 246px 0 60px;
 }
 
 .page-not-found__title {
-	margin: 0;
-    padding: 0;
-    color: #FFFFFF;
-    font-size: 140px;
-    font-weight: 400;
-    line-height: 169px;
-    letter-spacing: 0em;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-size: 140px;
+  font-weight: 400;
+  line-height: 169px;
+  letter-spacing: 0em;
+  text-align: center;
 }
 
 .page-not-found__subtitle {
-    margin: 5px 0 0 0;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
-    letter-spacing: 0em;
-    text-align: center;
+  margin: 5px 0 0 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center;
 }
 
 .page-not-found__link {
-    margin: 184px auto 0;
-	padding: 0;
-    border: none;
-	background-color: transparent;
-    color: #4285F4;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 17px;
-    letter-spacing: 0em;
-    text-align: center;
-	display: block;
-	cursor: pointer;
+  margin: 184px auto 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: #4285f4;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+  display: block;
+  cursor: pointer;
 }
 
 @media (hover: hover) {
-    .page-not-found__link:hover {
-        opacity: .7;
-        transition: opacity .2s ease-out;
-    }
+  .page-not-found__link:hover {
+    opacity: 0.7;
+    transition: opacity 0.2s ease-out;
+  }
 }
 
 @media screen and (max-width: 769px) {
-	.page-not-found {
-		margin: 408px 0 222px;
-	}
+  .page-not-found {
+    margin: 408px 0 222px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .page-not-found {
+    margin: 329px 0 30px;
   }
 
-@media screen and (max-width: 425px) {
-	.page-not-found {
-		margin: 329px 0 30px;
-	}
+  .page-not-found__title {
+    font-size: 80px;
+    line-height: 97px;
   }
+  
+  .page-not-found__subtitle {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  .page-not-found__link {
+    margin-top: 284px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

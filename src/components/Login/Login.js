@@ -44,7 +44,7 @@ function Login() {
       </div>
       <p className="login__caption">
         Ещё не зарегистрированы?{' '}
-        <Link className="login__button-login" to="/signup">
+        <Link className="login__button-reg" to="/signup">
           Регистрация
         </Link>
       </p>
