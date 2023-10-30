@@ -27,3 +27,9 @@
 		width: 320px;
 	}
   }
+
+@media screen and (max-width: 426px) {
+	.movies__button {
+		width: 240px;
+	}
+  }
