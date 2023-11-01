@@ -9,11 +9,23 @@
   list-style: none;
 }
 
+@media screen and (max-width: 1160px) {
+  .movies-list {
+    gap: 36px 30px;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .movies-list {
+    column-gap: 42px;
+  }
+}
+
 @media screen and (max-width: 769px) {
   .movies-list {
     margin: 130px 0 30px;
     grid-template-columns: repeat(auto-fit, 339px);
-    gap: 36px 30px;
+    column-gap: 36px;
   }
 }
 
