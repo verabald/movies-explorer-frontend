@@ -15,7 +15,7 @@ function Profile() {
               <input
                 className="profile__input"
                 id="name"
-                type="name"
+                type="text"
                 name="name"
                 placeholder="Например, Виталий"
               />
