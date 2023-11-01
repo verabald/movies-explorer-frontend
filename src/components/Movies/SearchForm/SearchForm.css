@@ -37,7 +37,16 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 34px 34px;
+    cursor: pointer;
 }
+
+@media (hover: hover) {
+    .search__button:hover {
+        opacity: .8;
+        transition: opacity .2s ease-out;
+  }
+  }
+  
 
 @media screen and (max-width: 1200px) {
     .search__input {
