@@ -22,6 +22,7 @@ function Login() {
               id="email"
               type="email"
               name="email"
+              placeholder="pochta@yandex.ru"
               required
             />
           </label>
@@ -35,6 +36,7 @@ function Login() {
               name="password"
               minLength="2"
               maxLength="30"
+              placeholder="Введите пароль"
               required
             />
           </label>

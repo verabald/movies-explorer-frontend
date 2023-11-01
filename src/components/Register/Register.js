@@ -24,6 +24,7 @@ function Register() {
               name="name"
               minLength="2"
               maxLength="30"
+              placeholder="Например, Виталий"
               required
             />
           </label>
@@ -35,6 +36,7 @@ function Register() {
               id="email"
               type="email"
               name="email"
+              placeholder="pochta@yandex.ru"
               required
             />
           </label>

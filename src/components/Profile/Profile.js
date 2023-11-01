@@ -17,6 +17,7 @@ function Profile() {
                 id="name"
                 type="name"
                 name="name"
+                placeholder="Например, Виталий"
               />
             </label>
             <label className="profile__input-title">
@@ -26,6 +27,7 @@ function Profile() {
                 id="email"
                 type="email"
                 name="email"
+                placeholder="pochta@yandex.ru"
               />
             </label>
             <button className="profile__button">Редактировать</button>
