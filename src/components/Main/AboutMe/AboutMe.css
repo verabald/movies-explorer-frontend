@@ -4,7 +4,7 @@
   padding: 0 70px 0;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 600px 1fr;
 }
 
 .about-me__head {
@@ -48,7 +48,6 @@
 }
 
 .about-me__text {
-  max-width: 600px;
   margin: 26px 0 0 0;
   padding: 0;
   box-sizing: border-box;
@@ -101,6 +100,7 @@
   .about-me {
     min-height: 500px;
     padding: 0 50px 0;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .about-me__head {

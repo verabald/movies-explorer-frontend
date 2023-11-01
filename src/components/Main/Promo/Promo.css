@@ -7,7 +7,7 @@
 }
 
 .promo__title {
-  max-width: 640px;
+  min-width: 640px;
   margin: 75px 0 0 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,7 +15,7 @@
   line-height: 58px;
   font-size: 50px;
   font-weight: 400;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   align-self: flex-end;
 }
 
@@ -111,6 +111,13 @@
   .promo__button {
     margin: 92px 0 76px 0;
   }
+}
+
+@media screen and (max-width: 740px) {
+  .promo__title {
+    min-width: 310px;
+  }
+  
 }
 
 @media screen and (max-width: 426px) {
