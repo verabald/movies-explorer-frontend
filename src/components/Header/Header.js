@@ -12,10 +12,9 @@ function Header({ isSigned }) {
     >
       <Link
         className="header__link"
-        alt="Зелёный круг с белой буквой С внутри"
         to="/"
       >
-        <img className="header__logo" src={logo} alt="Логотип" />
+        <img className="header__logo" src={logo} alt="Зелёный круг с белой буквой С внутри" />
       </Link>
       <Navigation isSigned={isSigned} />
     </header>

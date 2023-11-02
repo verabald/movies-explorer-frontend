@@ -8,10 +8,9 @@ function Login() {
       <div className="login__container">
         <Link
           className="login__logo-link"
-          alt="Зелёный круг с белой буквой С внутри"
           to="/"
         >
-          <img className="login__logo" src={logo} alt="Логотип" />
+          <img className="login__logo" src={logo} alt="Зелёный круг с белой буквой С внутри" />
         </Link>
         <h2 className="login__title">Рады видеть!</h2>
         <form className="login__form">
