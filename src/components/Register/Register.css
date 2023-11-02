@@ -139,12 +139,20 @@
 }
 
 @media screen and (max-width: 769px) {
+  .register {
+    margin-bottom: 232px;
+  }
+
   .register__logo-link {
     margin-top: 232px;
   }
 }
 
 @media screen and (max-width: 426px) {
+  .register {
+    margin-bottom: 30px;
+  }
+
   .register__logo-link {
     margin-top: 56px;
   }

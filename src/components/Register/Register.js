@@ -8,10 +8,9 @@ function Register() {
       <div className="register__container">
         <Link
           className="register__logo-link"
-          alt="Зелёный круг с белой буквой С внутри"
           to="/"
         >
-          <img className="register__logo" src={logo} alt="Логотип" />
+          <img className="register__logo" src={logo} alt="Зелёный круг с белой буквой С внутри" />
         </Link>
         <h2 className="register__title">Добро пожаловать!</h2>
         <form className="register__form">
@@ -24,6 +23,7 @@ function Register() {
               name="name"
               minLength="2"
               maxLength="30"
+              placeholder="Например, Виталий"
               required
             />
           </label>
@@ -35,6 +35,7 @@ function Register() {
               id="email"
               type="email"
               name="email"
+              placeholder="pochta@yandex.ru"
               required
             />
           </label>
@@ -48,6 +49,7 @@ function Register() {
               name="password"
               minLength="2"
               maxLength="30"
+              placeholder="Введите пароль"
               required
             />
           </label>

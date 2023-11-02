@@ -15,8 +15,9 @@ function Profile() {
               <input
                 className="profile__input"
                 id="name"
-                type="name"
+                type="text"
                 name="name"
+                placeholder="Например, Виталий"
               />
             </label>
             <label className="profile__input-title">
@@ -26,9 +27,18 @@ function Profile() {
                 id="email"
                 type="email"
                 name="email"
+                placeholder="pochta@yandex.ru"
               />
             </label>
-            <button className="profile__button">Редактировать</button>
+            <span className="profile__error profile__button-hidden" id="error">
+              При обновлении профиля произошла ошибка.
+            </span>
+            <button className="profile__save profile__button-hidden" type="submit">
+              Сохранить
+            </button>
+            <button className="profile__edit" type="button">
+              Редактировать
+            </button>
           </form>
         </div>
         <Link className="profile__close" to="/">

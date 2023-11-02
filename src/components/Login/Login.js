@@ -8,10 +8,9 @@ function Login() {
       <div className="login__container">
         <Link
           className="login__logo-link"
-          alt="Зелёный круг с белой буквой С внутри"
           to="/"
         >
-          <img className="login__logo" src={logo} alt="Логотип" />
+          <img className="login__logo" src={logo} alt="Зелёный круг с белой буквой С внутри" />
         </Link>
         <h2 className="login__title">Рады видеть!</h2>
         <form className="login__form">
@@ -22,6 +21,7 @@ function Login() {
               id="email"
               type="email"
               name="email"
+              placeholder="pochta@yandex.ru"
               required
             />
           </label>
@@ -35,6 +35,7 @@ function Login() {
               name="password"
               minLength="2"
               maxLength="30"
+              placeholder="Введите пароль"
               required
             />
           </label>

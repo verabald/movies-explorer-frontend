@@ -1,11 +1,11 @@
-.movies-card-radio__input_type_default {
+.movies-card__radio-input_type_default {
 	width: 0;
 	height: 0;
 	position: absolute;
 	opacity: 0;
 }
 
-.movies-card-radio__input_type_design {
+.movies-card__radio-input_type_design {
 	width: 16px;
 	height: 16px;
 	position: relative;
@@ -13,7 +13,7 @@
     cursor: pointer;
 }
 
-.movies-card-radio__input_type_design::before {
+.movies-card__radio-input_type_design::before {
     padding: 5px 0 0 0;
 	width: 17px;
 	height: 17px;
@@ -26,6 +26,6 @@
 }
 
 
-.movies-card-radio__input_type_default:checked + .movies-card-radio__input_type_design::before {
+.movies-card__radio-input_type_default:checked + .movies-card__radio-input_type_design::before {
 	background-image: url('../../../../images/movies-saveon.svg');
 }
