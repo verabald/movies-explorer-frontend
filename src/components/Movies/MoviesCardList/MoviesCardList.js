@@ -1,11 +1,24 @@
 import MoviesCard from '../MoviesCard/MoviesCard';
 import './MoviesCardList.css';
 
-function MoviesCardList({ movies }) {
+import { useLocation } from 'react-router-dom';
+
+function MoviesCardList({ movies, isSaved, onDelete, onSave }) {
+  const { pathname } = useLocation();
   return (
     <ul className="movies-list">
       {movies.map(({ _id, ...movie }) => (
-        <MoviesCard key={_id} movie={movie} />
+        <MoviesCard
+          isSaved={isSaved}
+          onSave={() => {
+            onSave(movie);
+          }}
+          onDelete={() => {
+            pathname === '/movies' ? onDelete(movie) : onDelete(_id);
+          }}
+          key={movie._id}
+          movie={movies}
+        />
       ))}
     </ul>
   );

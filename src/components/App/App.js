@@ -12,9 +12,12 @@ import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
 import PageNotFound from '../PageNotFound/PageNotFound';
+import { mainApi } from '../../utils/MainApi';
 
 function App() {
   const navigate = useNavigate();
+
+  const [currentUser, setCurrentUser] = useState({});
   const [isSigned, setSign] = useState(false);
 
   function handleSignUp() {
@@ -32,7 +35,7 @@ function App() {
   }
 
   return (
-    <CurrentUserContext.Provider>
+    <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <Routes>
           <Route
