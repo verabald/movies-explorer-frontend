@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 import './App.css';
 import '../../index.css';
@@ -26,17 +26,20 @@ function App() {
   const [isSigned, setIsSigned] = useState(false);
   const [authCheck, setAuthCheck] = useState(false);
   const [email, setEmail] = useState('');
+  const [values, setValue] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
 
   useEffect(() => {
     checkToken();
   }, []);
 
   useEffect(() => {
-    setCurrentToken(localStorage.getItem('token'))
+    setCurrentToken(localStorage.getItem('token'));
     if (isSigned && currentToken) {
-      Promise.all([
-        moviesApi.getMovies(currentToken),
-      ])
+      Promise.all([moviesApi.getMovies(currentToken)])
         .then((res) => {
           const [user] = res;
           setCurrentUser(user.data);
@@ -56,6 +59,15 @@ function App() {
         })
         .catch(console.error);
     }
+  }
+
+  function handleChange(evt) {
+    const { name, value } = evt.target;
+
+    setValue({
+      ...values,
+      [name]: value,
+    });
   }
 
   function handleSignUp() {
@@ -89,12 +101,29 @@ function App() {
 
           <Route
             path="/signup"
-            element={<Register onSignUp={handleSignUp} />}
+            element={
+              <Register
+                onSignUp={handleSignUp}
+                setAuthCheck={setAuthCheck}
+                setEmail={setEmail}
+                values={values}
+                setValue={setValue}
+                onChange={handleChange}
+              />
+            }
           ></Route>
 
           <Route
             path="/signin"
-            element={<Login onSignIn={handleSignIn} />}
+            element={
+              <Login
+                onSignIn={handleSignIn}
+                setEmail={setEmail}
+                values={values}
+                setValue={setValue}
+                onChange={handleChange}
+              />
+            }
           ></Route>
 
           <Route

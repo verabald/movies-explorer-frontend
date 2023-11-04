@@ -18,12 +18,12 @@ function Navigation({ isSigned }) {
   return (
     <nav className="navigation">
       {isSigned ? (
-        <NavLogout />
-      ) : (
         <>
           <NavLogin />
           <BurgerButton onClick={handleOpenBurger} />
         </>
+      ) : (
+        <NavLogout />
       )}
       <Burger isOpen={isOpen} isClose={handleCloseBurger} />
     </nav>
