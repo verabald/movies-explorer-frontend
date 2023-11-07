@@ -12,6 +12,7 @@ import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
 import PageNotFound from '../PageNotFound/PageNotFound';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import mainApi from '../../utils/MainApi';
 import moviesApi from '../../utils/MoviesApi';
 
@@ -37,9 +38,9 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setCurrentToken(localStorage.getItem('token'));
+    setCurrentToken(localStorage.getItem('token'))
     if (isSigned && currentToken) {
-      Promise.all([moviesApi.getMovies(currentToken)])
+      Promise.all([mainApi.getMovie()])
         .then((res) => {
           const [user] = res;
           setCurrentUser(user.data);
@@ -131,7 +132,7 @@ function App() {
             element={
               <>
                 <Header isSigned={isSigned} />
-                <Movies />
+                <ProtectedRoute element={Movies} />
                 <Footer />
               </>
             }
@@ -142,7 +143,7 @@ function App() {
             element={
               <>
                 <Header isSigned={isSigned} />
-                <SavedMovies />
+                <ProtectedRoute element={SavedMovies} />
                 <Footer />
               </>
             }
@@ -150,7 +151,7 @@ function App() {
 
           <Route
             path="/profile"
-            element={<Profile onSignOut={handleSignOut} isSigned={isSigned} />}
+            element={<ProtectedRoute element={Profile} isSigned={isSigned} onSignOut={handleSignOut} />}
           ></Route>
 
           <Route path="*" element={<Navigate to="/pagenotfound" replace />} />

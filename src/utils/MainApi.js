@@ -37,7 +37,7 @@ class MainApi {
   }
 
   checkToken(jwt) {
-    this._request(`${this._url}/users/me`, {
+    return this._request(`${this._url}/users/me`, {
       method: 'GET',
       headers: {
         Accept: this._headers,

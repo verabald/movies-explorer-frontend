@@ -27,9 +27,7 @@ function Movies() {
         localStorage.setItem('initialMovies', JSON.stringify(res));
         setInitialMovies(res);
       })
-      .catch((err) => {
-        console.log(err);
-      })
+      .catch(console.error)
       .finally(() => setIsLoading(false));
   }
 
@@ -39,9 +37,7 @@ function Movies() {
       .then((res) => {
         setSavedMovies([...savedMovies, res]);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch(console.error);
   }
 
   function handleRemove(movie) {
@@ -52,9 +48,7 @@ function Movies() {
         const movies = savedMovies.filter((item) => item._id !== movieId);
         setSavedMovies(movies);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch(console.error);
   }
 
   function handleGetMovies() {
@@ -63,9 +57,7 @@ function Movies() {
       .then((res) => {
         setSavedMovies(res);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch(console.error);
   }
 
   useEffect(() => {
