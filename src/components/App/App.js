@@ -24,6 +24,7 @@ function App() {
   );
 
   const [currentUser, setCurrentUser] = useState({});
+  const [isMoviesSaved, setIsMoviesSaved] = useState([]);
   const [isSigned, setIsSigned] = useState(false);
   const [authCheck, setAuthCheck] = useState(false);
   const [email, setEmail] = useState('');
@@ -38,24 +39,21 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setCurrentToken(localStorage.getItem('token'))
-    if (isSigned && currentToken) {
-      Promise.all([mainApi.getMovie()])
-        .then((res) => {
-          const [user] = res;
-          setCurrentUser(user.data);
-        })
-        .catch(console.error);
-    }
-  }, [isSigned, currentToken]);
+    mainApi.getSavedMovies()
+      .then((res) => {
+        setIsMoviesSaved(res.filter((i) => i.owner === currentUser._id));
+      })
+      .catch(console.error);
+  }, [currentUser]);
 
   function checkToken() {
     if (currentToken) {
       mainApi
         .checkToken(currentToken)
-        .then((data) => {
+        .then((res) => {
           setIsSigned(true);
-          setEmail(data.data.email);
+          setCurrentUser(res.data);
+          setEmail(res.data.email);
           navigate('/', { replace: true });
         })
         .catch(console.error);
@@ -69,6 +67,16 @@ function App() {
       ...values,
       [name]: value,
     });
+  }
+
+  function handleProfileEdit(user) {
+    return mainApi
+      .editProfile(user)
+      .then((res) => {
+        setCurrentUser(res.data);
+        navigate('/profile', { replace: true });
+      })
+      .catch(console.error);
   }
 
   function handleSignUp() {
@@ -132,7 +140,7 @@ function App() {
             element={
               <>
                 <Header isSigned={isSigned} />
-                <ProtectedRoute element={Movies} />
+                <ProtectedRoute element={Movies} isSigned={isSigned} />
                 <Footer />
               </>
             }
@@ -143,7 +151,7 @@ function App() {
             element={
               <>
                 <Header isSigned={isSigned} />
-                <ProtectedRoute element={SavedMovies} />
+                <ProtectedRoute element={SavedMovies} isSigned={isSigned} />
                 <Footer />
               </>
             }
@@ -151,9 +159,18 @@ function App() {
 
           <Route
             path="/profile"
-            element={<ProtectedRoute element={Profile} isSigned={isSigned} onSignOut={handleSignOut} />}
+            element={
+              <ProtectedRoute
+                element={Profile}
+                isSigned={isSigned}
+                onSignOut={handleSignOut}
+                onEdit={handleProfileEdit}
+              />
+            }
           ></Route>
-
+          <Route
+            element={isSigned ? <Navigate to="/movies" /> : <Navigate to="/" />}
+          />
           <Route path="*" element={<Navigate to="/pagenotfound" replace />} />
           <Route path="/pagenotfound" element={<PageNotFound />} />
         </Routes>

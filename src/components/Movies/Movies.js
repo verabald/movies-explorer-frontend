@@ -53,7 +53,7 @@ function Movies() {
 
   function handleGetMovies() {
     return mainApi
-      .getMovie()
+      .getSavedMovies()
       .then((res) => {
         setSavedMovies(res);
       })

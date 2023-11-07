@@ -47,7 +47,7 @@ class MainApi {
     });
   }
 
-  editProfile(name, email) {
+  editProfile(data) {
     return this._request(`${this._url}/users/me`, {
       method: 'PATCH',
       headers: {
@@ -56,13 +56,13 @@ class MainApi {
         Authorization: `Bearer ${localStorage.getItem('jwt')}`,
       },
       body: JSON.stringify({
-        name: name,
-        email: email,
+        name: data.name,
+        email: data.email,
       }),
     });
   }
 
-  getMovie() {
+  getSavedMovies() {
     return this._request(`${this._url}/movies`, {
       headers: {
         'Content-Type': this._headers,
