@@ -81,6 +81,7 @@ function Movies() {
   }, [resultOfSearch, movieToShow]);
 
   function handleSave(movie) {
+    console.log(movie);
     return mainApi
       .saveMovie(movie)
       .then((res) => {
