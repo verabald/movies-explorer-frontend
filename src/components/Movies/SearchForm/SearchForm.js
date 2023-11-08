@@ -25,14 +25,14 @@ function SearchForm({onSearch}) {
     setReqest(target.value);
   }
 
-  const handleShortsCheck = () => {
-    onSearch(request, !isShort);
-    setIsShort(!isShort);
-  }
-
   function handleSearch(e) {
     e.preventDefault();
     onSearch(request, isShort);
+  }
+
+  const handleShortCheck = () => {
+    onSearch(request, !isShort);
+    setIsShort(!isShort);
   }
 
   return (
@@ -41,7 +41,7 @@ function SearchForm({onSearch}) {
         <input className="search__input" value={request} placeholder="Фильм" required onChange={handleChange} />
         <button className="search__button" type="submit" onClick={handleSearch}></button>
       </form>
-      <FilterCheckbox checkHandler={handleShortsCheck}/>
+      <FilterCheckbox isShort={isShort} isCheck={handleShortCheck}/>
     </section>
   );
 }
