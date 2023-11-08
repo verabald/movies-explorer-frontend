@@ -17,7 +17,7 @@ function MoviesCardList({ movies, isSaved, onDelete, onSave }) {
             pathname === '/movies' ? onDelete(movie) : onDelete(_id);
           }}
           key={movie._id}
-          movie={movies}
+          movie={movie}
         />
       ))}
     </ul>

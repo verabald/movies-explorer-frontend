@@ -3,6 +3,8 @@ import MoviesCardList from './MoviesCardList/MoviesCardList';
 import Preloader from './Preloader/Preloader';
 import mainApi from '../../utils/MainApi';
 import moviesApi from '../../utils/MoviesApi';
+import { handleQtMovies } from '../../utils/qt';
+import filterMovies from '../../utils/filter';
 import './Movies.css';
 
 import { useEffect, useState, useCallback } from 'react';
@@ -10,9 +12,15 @@ import { useEffect, useState, useCallback } from 'react';
 function Movies() {
   const [isLoading, setIsLoading] = useState(false);
   const [isNothing, setIsNothing] = useState(false);
-  const [isShowingMore, setisShowingMore] = useState(true);
+  const [isShowingMore, setIsShowingMore] = useState(true);
   const [savedMovies, setSavedMovies] = useState([]);
 
+  const [number, setNumber] = useState(handleQtMovies());
+  const [numberOfMovies, setNumberOfMovies] = useState(number.moviesOnPage);
+
+  const [resultOfSearch, setResultOfSearch] = useState(() => {
+    return JSON.parse(localStorage.getItem('currentResult')) || [];
+  });
   const [initialMovies, setInitialMovies] = useState(() => {
     const movies =
       JSON.parse(localStorage.getItem('initialMovies')) || getMovies();
@@ -30,6 +38,47 @@ function Movies() {
       .catch(console.error)
       .finally(() => setIsLoading(false));
   }
+
+  function handleSearch(req, short) {
+    setNumberOfMovies(number.moviesOnPage);
+    localStorage.setItem('request', req);
+    localStorage.setItem('short', JSON.stringify(short));
+    if (req === '') {
+      return;
+    }
+    const currentResult = initialMovies.filter((movies) =>
+      filterMovies(movies, req, short)
+    );
+    if (currentResult.length === 0) {
+      setIsNothing(true);
+      setResultOfSearch(currentResult);
+    } else {
+      setIsNothing(false);
+      setResultOfSearch(currentResult);
+      localStorage.setItem('currentResult', JSON.stringify(currentResult));
+      console.log(currentResult);
+    }
+  }
+
+  function handleShowingMore() {
+    setNumberOfMovies((prev) => prev + number.moreMovies);
+  }
+
+  const resize = useCallback(() => {
+    setNumber(handleQtMovies());
+  }, [number]);
+
+  useEffect(() => {
+    window.addEventListener('resize', resize);
+    setNumberOfMovies(number.moviesOnPage);
+    return () => window.removeEventListener('resize', resize);
+  }, [resize, number]);
+
+  const movieToShow = resultOfSearch.slice(0, numberOfMovies);
+
+  useEffect(() => {
+    setIsShowingMore(resultOfSearch.length > movieToShow.length);
+  }, [resultOfSearch, movieToShow]);
 
   function handleSave(movie) {
     return mainApi
@@ -70,14 +119,12 @@ function Movies() {
 
   return (
     <main className="movies">
-      <SearchForm 
-      // onSearch={handleSearch}
-      />
+      <SearchForm onSearch={handleSearch} />
       {isLoading ? (
         <Preloader />
       ) : (
         <MoviesCardList
-          movies={initialMovies}
+          movies={movieToShow}
           isSaved={savedMovies}
           onDelete={handleRemove}
           onSave={handleSave}
@@ -90,7 +137,7 @@ function Movies() {
         <button
           className="movies__button"
           type="button"
-          // onClick={handleMoreMovies}
+          onClick={handleShowingMore}
         >
           Ещё
         </button>
