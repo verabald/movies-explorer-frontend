@@ -35,7 +35,6 @@ function SavedMovies() {
       .then(() => {
         const moviesFav = isSavedMovies.filter((item) => item._id !== id);
         setIsSavedMovies(moviesFav);
-
         const movieToShow = resultOfSearch.filter((item) => item._id !== id);
         setResultOfSearch(movieToShow);
         localStorage.setItem('favorites', JSON.stringify(moviesFav));
@@ -49,7 +48,7 @@ function SavedMovies() {
       {isLoading ? (
         <Preloader />
       ) : (
-        <MoviesCardList movies={resultOfSearch} onDelete={handleRemove} />
+        <MoviesCardList movies={isSavedMovies} onDelete={handleRemove} />
       )}
       {isNothing ? (
         <span className="saved-movies__nothing">Ничего не найдено</span>

@@ -53,7 +53,7 @@ class MainApi {
       headers: {
         Accept: this._headers,
         'Content-Type': this._headers,
-        Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
       body: JSON.stringify({
         name: data.name,
@@ -66,17 +66,17 @@ class MainApi {
     return this._request(`${this._url}/movies`, {
       headers: {
         'Content-Type': this._headers,
-        Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     });
   }
 
-  saveMovie(movie) {
+  saveMovie(movie) { console.log(movie);
     return this._request(`${this._url}/movies`, {
       method: 'POST',
       headers: {
         'Content-Type': this._headers,
-        Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
       body: JSON.stringify({
         nameRU: movie.nameRU,
@@ -103,7 +103,7 @@ class MainApi {
       method: 'DELETE',
       headers: {
         'Content-Type': this._headers,
-        Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     });
   }

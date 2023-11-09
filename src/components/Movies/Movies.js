@@ -115,7 +115,7 @@ function Movies() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('savedMovies', JSON.stringify(savedMovies));
+    localStorage.setItem('favorites', JSON.stringify(savedMovies));
   }, [savedMovies]);
 
   return (

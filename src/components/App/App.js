@@ -47,14 +47,14 @@ function App() {
   }, [currentUser]);
 
   function checkToken() {
-    if (currentToken) {
+    if (currentToken) { console.log(currentToken);
       mainApi
         .checkToken(currentToken)
         .then((res) => {
           setIsSigned(true);
           setCurrentUser(res.data);
           setEmail(res.data.email);
-          navigate('/', { replace: true });
+          navigate({ replace: true });
         })
         .catch(console.error);
     }
@@ -169,7 +169,7 @@ function App() {
             }
           ></Route>
           <Route
-            element={isSigned ? <Navigate to="/movies" /> : <Navigate to="/" />}
+            element={isSigned ? <Navigate to="/movies" /> : <Navigate to="/signin" />}
           />
           <Route path="*" element={<Navigate to="/pagenotfound" replace />} />
           <Route path="/pagenotfound" element={<PageNotFound />} />

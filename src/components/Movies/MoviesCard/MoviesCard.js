@@ -2,7 +2,6 @@ import MoviesCardRadio from './MoviesCardRadio/MoviesCardRadio';
 import MoviesCardButton from './MoviesCardButton/MoviesCardButton';
 import './MoviesCard.css';
 
-import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 function MoviesCard({ movie, onDelete, onSave }) {
@@ -28,9 +27,7 @@ function MoviesCard({ movie, onDelete, onSave }) {
         <img
           className="movies-card__image"
           alt={movie.nameRu}
-          src={
-            `${url}/${movie.image.url}`
-          }
+          src={pathname === '/movies' ? `${url}/${movie.image.url}` : movie.image}
         />
       </a>
       <div className="movies-card__box">
