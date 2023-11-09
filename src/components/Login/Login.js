@@ -6,11 +6,10 @@ import mainApi from '../../utils/MainApi';
 
 import useFormWithValidation from '../../utils/validation.js';
 
-function Login({ onSignIn, setAuthCheck, setEmail }) {
+function Login({ onSignIn }) {
   const { values, handleChange, resetFrom, errors, isValid } =
     useFormWithValidation();
   const navigate = useNavigate();
-  const [password, setPassword] = useState('');
   const [statusLog, setStatusLog] = useState({});
   const { text } = statusLog;
   const isDisabled = !isValid;
@@ -23,18 +22,16 @@ function Login({ onSignIn, setAuthCheck, setEmail }) {
       .then((res) => {
         localStorage.setItem('token', res.token);
         onSignIn(true);
-        setEmail(res.email);
-        setPassword(values.password);
         navigate('/movies', { replace: true });
       })
       .catch((err) => {
-        if (err === "Что-то пошло не так: 401") {
+        if (err === 'Что-то пошло не так: 401') {
           setStatusLog({
-            text: 'Неверный логин или пароль'
+            text: 'Неверный логин или пароль',
           });
         } else {
           setStatusLog({
-            text: 'При входе произошла ошибка'
+            text: 'При входе произошла ошибка',
           });
         }
       });

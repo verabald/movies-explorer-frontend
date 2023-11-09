@@ -25,8 +25,6 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isMoviesSaved, setIsMoviesSaved] = useState([]);
   const [isSigned, setIsSigned] = useState(false);
-  const [authCheck, setAuthCheck] = useState(false);
-  const [email, setEmail] = useState('');
 
   const [statusEdit, setStatusEdit] = useState({});
 
@@ -51,7 +49,6 @@ function App() {
         .then((res) => {
           setIsSigned(true);
           setCurrentUser(res.data);
-          setEmail(res.data.email);
           navigate({ replace: true });
         })
         .catch(console.error);
@@ -81,10 +78,6 @@ function App() {
       });
   }
 
-  function handleSignUp() {
-    navigate('/signin', { replace: true });
-  }
-
   function handleSignIn() {
     setIsSigned(true);
     navigate('/movies', { replace: true });
@@ -111,25 +104,11 @@ function App() {
             }
           ></Route>
 
-          <Route
-            path="/signup"
-            element={
-              <Register
-                onSignUp={handleSignUp}
-                setAuthCheck={setAuthCheck}
-                setEmail={setEmail}
-              />
-            }
-          ></Route>
+          <Route path="/signup" element={<Register />}></Route>
 
           <Route
             path="/signin"
-            element={
-              <Login
-                onSignIn={handleSignIn}
-                setEmail={setEmail}
-              />
-            }
+            element={<Login onSignIn={handleSignIn} />}
           ></Route>
 
           <Route

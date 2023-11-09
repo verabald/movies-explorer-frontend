@@ -6,13 +6,11 @@ import mainApi from '../../utils/MainApi';
 
 import useFormWithValidation from '../../utils/validation.js';
 
-function Register({ setAuthCheck, setEmail }) {
+function Register() {
   const navigate = useNavigate();
 
   const { values, handleChange, resetFrom, errors, isValid } =
     useFormWithValidation();
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
   const [statusReg, setStatusReg] = useState({});
   const { text } = statusReg;
 
@@ -23,10 +21,6 @@ function Register({ setAuthCheck, setEmail }) {
     mainApi
       .register(values)
       .then((res) => {
-        setEmail(res.email);
-        setName(values.name);
-        setPassword(values.password);
-        setAuthCheck(true);
         navigate('/signin', { replace: true });
       })
       .catch((err) => {
@@ -44,7 +38,7 @@ function Register({ setAuthCheck, setEmail }) {
 
   useEffect(() => {
     resetFrom({}, {}, false);
-    setStatusReg('')
+    setStatusReg('');
   }, [resetFrom]);
 
   return (
