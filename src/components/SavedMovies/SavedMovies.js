@@ -8,7 +8,6 @@ import './SavedMovies.css';
 import { useState } from 'react';
 
 function SavedMovies() {
-  const [isLoading, setIsLoading] = useState(false);
   const [isNothing, setIsNothing] = useState(false);
 
   const [isSavedMovies, setIsSavedMovies] = useState(() => {
@@ -16,9 +15,9 @@ function SavedMovies() {
   });
   const [resultOfSearch, setResultOfSearch] = useState(isSavedMovies);
 
-  function handleSearch(req, short) {
+  function handleSearch(req, shorts) {
     const currentResult = isSavedMovies.filter((movie) =>
-      filterMovies(movie, req, short)
+      filterMovies(movie, req, shorts)
     );
     if (currentResult.length === 0) {
       setIsNothing(true);
@@ -45,11 +44,7 @@ function SavedMovies() {
   return (
     <main className="saved-movies">
       <SearchForm onSearch={handleSearch} />
-      {isLoading ? (
-        <Preloader />
-      ) : (
-        <MoviesCardList movies={isSavedMovies} onDelete={handleRemove} />
-      )}
+      <MoviesCardList movies={isSavedMovies} onDelete={handleRemove} />
       {isNothing ? (
         <span className="saved-movies__nothing">Ничего не найдено</span>
       ) : null}
