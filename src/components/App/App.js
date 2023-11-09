@@ -33,12 +33,15 @@ function App() {
     password: '',
   });
 
+  const [statusEdit, setStatusEdit] = useState({});
+
   useEffect(() => {
     checkToken();
   }, []);
 
   useEffect(() => {
-    mainApi.getSavedMovies()
+    mainApi
+      .getSavedMovies()
       .then((res) => {
         setIsMoviesSaved(res.filter((i) => i.owner === currentUser._id));
       })
@@ -46,7 +49,8 @@ function App() {
   }, [currentUser]);
 
   function checkToken() {
-    if (currentToken) { console.log(currentToken);
+    if (currentToken) {
+      console.log(currentToken);
       mainApi
         .checkToken(currentToken)
         .then((res) => {
@@ -74,8 +78,21 @@ function App() {
       .then((res) => {
         setCurrentUser(res.data);
         navigate('/profile', { replace: true });
+        setStatusEdit({
+          text: 'Профиль обновлён',
+        });
       })
-      .catch(console.error);
+      .catch((error) => {
+        if (error === 'Пользователь уже существует') {
+          setStatusEdit({
+            text: 'Пользователь с таким email уже существует',
+          });
+        } else {
+          setStatusEdit({
+            text: 'При обновлении профиля произошла ошибка',
+          });
+        }
+      });
   }
 
   function handleSignUp() {
@@ -165,11 +182,14 @@ function App() {
                 isSigned={isSigned}
                 onSignOut={handleSignOut}
                 onEdit={handleProfileEdit}
+                statusEdit={statusEdit}
               />
             }
           ></Route>
           <Route
-            element={isSigned ? <Navigate to="/movies" /> : <Navigate to="/signin" />}
+            element={
+              isSigned ? <Navigate to="/movies" /> : <Navigate to="/signin" />
+            }
           />
           <Route path="*" element={<Navigate to="/pagenotfound" replace />} />
           <Route path="/pagenotfound" element={<PageNotFound />} />

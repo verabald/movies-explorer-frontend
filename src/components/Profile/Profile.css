@@ -61,6 +61,15 @@
   text-align: right;
 }
 
+.profile__input:focus {
+  background-color: transparent;
+  outline: none;
+}
+
+.profile__input_disabled {
+  color: #C2C2C2;
+}
+
 .profile__edit {
   margin: 200px 0 16px 0;
   background-color: transparent;
@@ -94,7 +103,7 @@
   min-width: 410px;
   min-height: 45px;
   box-sizing: border-box;
-  margin: 0 0 50px;
+  margin: 200px 0 50px;
   background-color: #4285f4;
   color: #ffffff;
   border: none;
@@ -107,7 +116,7 @@
   cursor: pointer;
 }
 
-.profile__save:disabled {
+.profile__save_disabled {
 	background-color: #F8F8F8;
   color: #C2C2C2;
 }
@@ -123,10 +132,6 @@
   font-weight: 400;
   line-height: 13px;
   letter-spacing: 0em;
-}
-
-.profile__button-hidden {
-  display: none;
 }
 
 @media (hover: hover) {
