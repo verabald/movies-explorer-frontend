@@ -27,11 +27,6 @@ function App() {
   const [isSigned, setIsSigned] = useState(false);
   const [authCheck, setAuthCheck] = useState(false);
   const [email, setEmail] = useState('');
-  const [values, setValue] = useState({
-    name: '',
-    email: '',
-    password: '',
-  });
 
   const [statusEdit, setStatusEdit] = useState({});
 
@@ -63,15 +58,6 @@ function App() {
     }
   }
 
-  function handleChange(evt) {
-    const { name, value } = evt.target;
-
-    setValue({
-      ...values,
-      [name]: value,
-    });
-  }
-
   function handleProfileEdit(user) {
     return mainApi
       .editProfile(user)
@@ -83,7 +69,7 @@ function App() {
         });
       })
       .catch((err) => {
-        if (err === 'Пользователь уже существует') {
+        if (err === 'Что-то пошло не так: 409') {
           setStatusEdit({
             text: 'Пользователь с таким email уже существует',
           });
@@ -132,9 +118,6 @@ function App() {
                 onSignUp={handleSignUp}
                 setAuthCheck={setAuthCheck}
                 setEmail={setEmail}
-                values={values}
-                setValue={setValue}
-                onChange={handleChange}
               />
             }
           ></Route>
@@ -145,9 +128,6 @@ function App() {
               <Login
                 onSignIn={handleSignIn}
                 setEmail={setEmail}
-                values={values}
-                setValue={setValue}
-                onChange={handleChange}
               />
             }
           ></Route>

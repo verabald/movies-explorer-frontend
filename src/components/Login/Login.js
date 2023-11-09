@@ -1,37 +1,49 @@
 import { useNavigate, Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Login.css';
 import logo from '../../images/header-logo.svg';
 import mainApi from '../../utils/MainApi';
 
-function Login({
-  onSignIn,
-  onChange,
-  setAuthCheck,
-  setEmail,
-  values,
-  setValue,
-}) {
+import useFormWithValidation from '../../utils/validation.js';
+
+function Login({ onSignIn, setAuthCheck, setEmail }) {
+  const { values, handleChange, resetFrom, errors, isValid } =
+    useFormWithValidation();
   const navigate = useNavigate();
   const [password, setPassword] = useState('');
+  const [statusLog, setStatusLog] = useState({});
+  const { text } = statusLog;
+  const isDisabled = !isValid;
 
   function onLog(evt) {
     evt.preventDefault();
 
     mainApi
       .login(values)
-      .then((data) => {
-        localStorage.setItem('token', data.token);
+      .then((res) => {
+        localStorage.setItem('token', res.token);
         onSignIn(true);
-        setEmail(data.email);
+        setEmail(res.email);
         setPassword(values.password);
-        setValue({ email: '', password: '' });
         navigate('/movies', { replace: true });
       })
-      .catch(() => {
-        setAuthCheck(false);
+      .catch((err) => {
+        if (err === "Что-то пошло не так: 401") {
+          setStatusLog({
+            text: 'Неверный логин или пароль'
+          });
+        } else {
+          setStatusLog({
+            text: 'При входе произошла ошибка'
+          });
+        }
       });
   }
+
+  useEffect(() => {
+    resetFrom({}, {}, false);
+  }, [resetFrom]);
+
   return (
     <section className="login">
       <div className="login__container">
@@ -47,21 +59,23 @@ function Login({
           <label className="login__input-title">
             E-mail
             <input
-              value={values.email}
+              value={values.email || ''}
               className="login__input"
               id="email"
               type="email"
               name="email"
               placeholder="pochta@yandex.ru"
               required
-              onChange={onChange}
+              onChange={handleChange}
             />
+            <span className="login__error" id="email-error">
+              {errors.email || ''}
+            </span>
           </label>
-          <span className="login__error" id="email-error"></span>
           <label className="login__input-title">
             Пароль
             <input
-              value={values.password}
+              value={values.password || ''}
               className="login__input"
               id="password"
               type="password"
@@ -70,11 +84,16 @@ function Login({
               maxLength="30"
               placeholder="Введите пароль"
               required
-              onChange={onChange}
+              onChange={handleChange}
             />
+            <span className="login__error" id="password-error">
+              {errors.password || ''}
+            </span>
           </label>
-          <span className="login__error" id="password-error"></span>
-          <button className="login__button">Войти</button>
+          <span className="login__message">{text}</span>
+          <button className="login__button" disabled={isDisabled}>
+            Войти
+          </button>
         </form>
       </div>
       <p className="login__caption">

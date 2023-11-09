@@ -1,31 +1,51 @@
 import { useNavigate, Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Register.css';
 import logo from '../../images/header-logo.svg';
 import mainApi from '../../utils/MainApi';
 
-function Register({ onChange, setAuthCheck, setEmail, values, setValue }) {
+import useFormWithValidation from '../../utils/validation.js';
+
+function Register({ setAuthCheck, setEmail }) {
   const navigate = useNavigate();
+
+  const { values, handleChange, resetFrom, errors, isValid } =
+    useFormWithValidation();
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
+  const [statusReg, setStatusReg] = useState({});
+  const { text } = statusReg;
+
+  const isDisabled = !isValid;
 
   function onRegister(evt) {
     evt.preventDefault();
-
     mainApi
       .register(values)
-      .then((data) => {
-        setEmail(data.email);
+      .then((res) => {
+        setEmail(res.email);
         setName(values.name);
         setPassword(values.password);
-        setValue({ name: '', email: '', password: '' });
         setAuthCheck(true);
         navigate('/signin', { replace: true });
       })
-      .catch(() => {
-        setAuthCheck(false);
+      .catch((err) => {
+        if (err === 'Что-то пошло не так: 409') {
+          setStatusReg({
+            text: 'Пользователь с таким email уже существует',
+          });
+        } else {
+          setStatusReg({
+            text: 'При регистрации пользователя произошла ошибка',
+          });
+        }
       });
   }
+
+  useEffect(() => {
+    resetFrom({}, {}, false);
+    setStatusReg('')
+  }, [resetFrom]);
 
   return (
     <section className="register">
@@ -42,7 +62,7 @@ function Register({ onChange, setAuthCheck, setEmail, values, setValue }) {
           <label className="register__input-title">
             Имя
             <input
-              value={values.name}
+              value={values.name || ''}
               className="register__input"
               id="name"
               type="text"
@@ -51,28 +71,32 @@ function Register({ onChange, setAuthCheck, setEmail, values, setValue }) {
               maxLength="30"
               placeholder="Например, Виталий"
               required
-              onChange={onChange}
+              onChange={handleChange}
             />
+            <span className="register__error" id="name-error">
+              {errors.name || ''}
+            </span>
           </label>
-          <span className="register__error" id="name-error"></span>
           <label className="register__input-title">
             E-mail
             <input
-              value={values.email}
+              value={values.email || ''}
               className="register__input"
               id="email"
               type="email"
               name="email"
               placeholder="pochta@yandex.ru"
               required
-              onChange={onChange}
+              onChange={handleChange}
             />
+            <span className="register__error" id="email-error">
+              {errors.email || ''}
+            </span>
           </label>
-          <span className="register__error" id="email-error"></span>
           <label className="register__input-title">
             Пароль
             <input
-              value={values.password}
+              value={values.password || ''}
               className="register__input"
               id="password"
               type="password"
@@ -81,11 +105,16 @@ function Register({ onChange, setAuthCheck, setEmail, values, setValue }) {
               maxLength="30"
               placeholder="Введите пароль"
               required
-              onChange={onChange}
+              onChange={handleChange}
             />
+            <span className="register__error" id="password-error">
+              {errors.password || ''}
+            </span>
           </label>
-          <span className="register__error" id="password-error"></span>
-          <button className="register__button">Зарегистрироваться</button>
+          <span className="register__message">{text}</span>
+          <button className="register__button" disabled={isDisabled}>
+            Зарегистрироваться
+          </button>
         </form>
       </div>
       <p className="register__caption">
