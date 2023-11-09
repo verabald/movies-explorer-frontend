@@ -2,12 +2,13 @@ import MoviesCardRadio from './MoviesCardRadio/MoviesCardRadio';
 import MoviesCardButton from './MoviesCardButton/MoviesCardButton';
 import convertDuration from '../../../utils/convert';
 import './MoviesCard.css';
-
+import { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 
-function MoviesCard({ movie, onDelete, onSave }) {
+function MoviesCard({ movie, isSaved, onDelete, onSave }) {
   const { pathname } = useLocation();
   const url = 'https://api.nomoreparties.co';
+  const [isSave, setIsSave] = useState(false);
 
   function handlerSaveMovie() {
     onSave();
@@ -16,6 +17,13 @@ function MoviesCard({ movie, onDelete, onSave }) {
   function handlerDeleteMovie() {
     onDelete();
   }
+
+  useEffect(() => {
+    if (isSaved) {
+      const res = isSaved.some((item) => (movie.id) === item.movieId)
+      setIsSave(res);
+    }
+  }, [isSaved])
 
   return (
     <li className="movies-card">
@@ -41,7 +49,7 @@ function MoviesCard({ movie, onDelete, onSave }) {
           </p>
         </div>
         {pathname === '/movies' ? (
-          <MoviesCardRadio onClick={handlerSaveMovie} />
+          <MoviesCardRadio checked={isSave ? true : false} onClick={handlerSaveMovie} />
         ) : (
           <MoviesCardButton onClick={handlerDeleteMovie} />
         )}

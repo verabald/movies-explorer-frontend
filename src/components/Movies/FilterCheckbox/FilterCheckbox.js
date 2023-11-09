@@ -1,13 +1,13 @@
 import './FilterCheckbox.css';
 
-function FilterCheckbox({ isShort, isCheck }) {
+function FilterCheckbox({ isShorts, onCheck }) {
   return (
     <label className="checkbox">
       <input
         className="checkbox__tumb checkbox__tumb_type_default"
         type="checkbox"
-        checked={isShort}
-        onChange={isCheck}
+        checked={isShorts}
+        onChange={onCheck}
       />
       <span className=" checkbox__tumb checkbox__tumb_type_design" />
       Короткометражки

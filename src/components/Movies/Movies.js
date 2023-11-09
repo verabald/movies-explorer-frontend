@@ -39,15 +39,15 @@ function Movies() {
       .finally(() => setIsLoading(false));
   }
 
-  function handleSearch(req, short) {
+  function handleSearch(req, shorts) {
     setNumberOfMovies(number.moviesOnPage);
     localStorage.setItem('request', req);
-    localStorage.setItem('short', JSON.stringify(short));
+    localStorage.setItem('shorts', JSON.stringify(shorts));
     if (req === '') {
       return;
     }
-    const currentResult = initialMovies.filter((movies) =>
-      filterMovies(movies, req, short)
+    const currentResult = initialMovies.filter((movie) =>
+      filterMovies(movie, req, shorts)
     );
     if (currentResult.length === 0) {
       setIsNothing(true);
@@ -56,7 +56,6 @@ function Movies() {
       setIsNothing(false);
       setResultOfSearch(currentResult);
       localStorage.setItem('currentResult', JSON.stringify(currentResult));
-      console.log(currentResult);
     }
   }
 

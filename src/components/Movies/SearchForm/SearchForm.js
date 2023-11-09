@@ -7,33 +7,33 @@ import { useLocation } from 'react-router-dom';
 function SearchForm({ onSearch }) {
   const { pathname } = useLocation();
 
-  const [request, setReqest] = useState(() => {
+  const [request, setRequest] = useState(() => {
     if (pathname === '/movies') {
-      const req = localStorage.getItem('req') || '';
+      const req = localStorage.getItem('request') || '';
       return req;
     } else return '';
   });
 
-  const [isShort, setIsShort] = useState(() => {
+  const [isShorts, setIsShorts] = useState(() => {
     if (pathname === '/movies') {
-      const short = JSON.parse(localStorage.getItem('short')) || false;
-      return short;
+      const shorts = JSON.parse(localStorage.getItem('shorts')) || false;
+      return shorts;
     } else return false;
   });
 
   function handleChange({ target }) {
-    setReqest(target.value);
+    setRequest(target.value);
   }
+
+  const handleShortsCheck = () => {
+    onSearch(request, !isShorts);
+    setIsShorts(!isShorts);
+  };
 
   function handleSearch(e) {
     e.preventDefault();
-    onSearch(request, isShort);
+    onSearch(request, isShorts);
   }
-
-  const handleShortCheck = () => {
-    onSearch(request, !isShort);
-    setIsShort(!isShort);
-  };
 
   return (
     <section className="search">
@@ -51,7 +51,7 @@ function SearchForm({ onSearch }) {
           onClick={handleSearch}
         ></button>
       </form>
-      <FilterCheckbox isShort={isShort} isCheck={handleShortCheck} />
+      <FilterCheckbox isShorts={isShorts} onCheck={handleShortsCheck} />
     </section>
   );
 }
