@@ -121,7 +121,7 @@
   color: #C2C2C2;
 }
 
-.profile__error {
+.profile__message {
   max-width: 320px;
   min-height: 14px;
   margin: 189px auto 20px;

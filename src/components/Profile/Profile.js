@@ -12,7 +12,7 @@ function Profile({ onSignOut, onEdit, isSigned, statusEdit }) {
 
   const currentUser = useContext(CurrentUserContext);
   const [isEdit, setIsEdit] = useState(false);
-  const [status, setStatus] = useState('');
+  const [isStatus, setIsStatus] = useState('');
   const isDisabled = !isValid;
 
   const typeButton = `profile__save ${isDisabled && 'profile__save_disabled'}`;
@@ -21,7 +21,7 @@ function Profile({ onSignOut, onEdit, isSigned, statusEdit }) {
   function handleEdit() {
     resetFrom(currentUser, {}, false);
     setIsEdit(true);
-    setStatus('');
+    setIsStatus('')
   }
 
   function handleSubmit(evt) {
@@ -32,14 +32,13 @@ function Profile({ onSignOut, onEdit, isSigned, statusEdit }) {
 
   useEffect(() => {
     if (text) {
-      setStatus(text);
+      setIsStatus(text);
     }
   }, [text]);
 
   useEffect(() => {
     if (currentUser) {
       resetFrom(currentUser, {}, false);
-      setStatus('');
     }
   }, [currentUser, resetFrom]);
 
@@ -80,8 +79,8 @@ function Profile({ onSignOut, onEdit, isSigned, statusEdit }) {
               />
             </label>
             {!isEdit && (
-              <span className="profile__error" id="error">
-                {text}
+              <span className="profile__message">
+                {isStatus}
               </span>
             )}
             {isEdit ? (
