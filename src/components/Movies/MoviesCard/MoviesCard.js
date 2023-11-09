@@ -1,5 +1,6 @@
 import MoviesCardRadio from './MoviesCardRadio/MoviesCardRadio';
 import MoviesCardButton from './MoviesCardButton/MoviesCardButton';
+import convertDuration from '../../../utils/convert';
 import './MoviesCard.css';
 
 import { useLocation } from 'react-router-dom';
@@ -27,13 +28,17 @@ function MoviesCard({ movie, onDelete, onSave }) {
         <img
           className="movies-card__image"
           alt={movie.nameRu}
-          src={pathname === '/movies' ? `${url}/${movie.image.url}` : movie.image}
+          src={
+            pathname === '/movies' ? `${url}/${movie.image.url}` : movie.image
+          }
         />
       </a>
       <div className="movies-card__box">
         <div className="movies-card__article">
           <h2 className="movies-card__title"> {movie.nameRU}</h2>
-          <p className="movies-card__caption"> {movie.duration}</p>
+          <p className="movies-card__caption">
+            {convertDuration(movie.duration)}
+          </p>
         </div>
         {pathname === '/movies' ? (
           <MoviesCardRadio onClick={handlerSaveMovie} />
