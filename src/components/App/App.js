@@ -18,10 +18,6 @@ import mainApi from '../../utils/MainApi';
 function App() {
   const navigate = useNavigate();
 
-  const [currentToken, setCurrentToken] = useState(
-    localStorage.getItem('token')
-  );
-
   const [currentUser, setCurrentUser] = useState({});
   const [isMoviesSaved, setIsMoviesSaved] = useState([]);
   const [isSigned, setIsSigned] = useState(false);
@@ -42,6 +38,7 @@ function App() {
   }, [currentUser]);
 
   function checkToken() {
+    const currentToken = localStorage.getItem('token');
     if (currentToken) {
       console.log(currentToken);
       mainApi
