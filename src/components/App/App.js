@@ -14,7 +14,6 @@ import Profile from '../Profile/Profile';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import mainApi from '../../utils/MainApi';
-import moviesApi from '../../utils/MoviesApi';
 
 function App() {
   const navigate = useNavigate();
@@ -89,6 +88,7 @@ function App() {
   }
 
   function handleSignOut() {
+    localStorage.clear();
     setIsSigned(false);
     navigate('/signin', { replace: true });
   }
