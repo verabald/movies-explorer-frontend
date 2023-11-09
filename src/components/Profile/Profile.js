@@ -81,7 +81,7 @@ function Profile({ onSignOut, onEdit, isSigned, statusEdit }) {
             </label>
             {!isEdit && (
               <span className="profile__error" id="error">
-                {status}
+                {text}
               </span>
             )}
             {isEdit ? (
@@ -93,19 +93,21 @@ function Profile({ onSignOut, onEdit, isSigned, statusEdit }) {
                 Сохранить
               </button>
             ) : (
-              <button
-                className="profile__edit"
-                type="button"
-                onClick={handleEdit}
-              >
-                Редактировать
-              </button>
+              <>
+                <button
+                  className="profile__edit"
+                  type="button"
+                  onClick={handleEdit}
+                >
+                  Редактировать
+                </button>
+                <Link className="profile__close" onClick={onSignOut}>
+                  Выйти из аккаунта
+                </Link>
+              </>
             )}
           </form>
         </div>
-        <Link className="profile__close" onClick={onSignOut}>
-          Выйти из аккаунта
-        </Link>
       </section>
     </>
   );
