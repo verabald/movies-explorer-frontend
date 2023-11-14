@@ -9,7 +9,6 @@ import useFormWithValidation from '../../utils/validation.js';
 function Login({ onSignIn }) {
   const { values, handleChange, resetFrom, errors, isValid } =
     useFormWithValidation();
-  const navigate = useNavigate();
   const [statusLog, setStatusLog] = useState({});
   const { text } = statusLog;
   const isDisabled = !isValid;
@@ -22,7 +21,6 @@ function Login({ onSignIn }) {
       .then((res) => {
         localStorage.setItem('token', res.token);
         onSignIn(true);
-        navigate('/movies', { replace: true });
       })
       .catch((err) => {
         if (err === 'Что-то пошло не так: 401') {
