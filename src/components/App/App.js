@@ -100,11 +100,11 @@ function App() {
             }
           ></Route>
 
-          <Route path="/signup" element={<Register />}></Route>
+          <Route path="/signup" element={isSigned ? <Navigate to="/" /> : <Register />}></Route>
 
           <Route
             path="/signin"
-            element={<Login onSignIn={handleSignIn} />}
+            element={isSigned ? <Navigate to="/" /> : <Login onSignIn={handleSignIn} />}
           ></Route>
 
           <Route
