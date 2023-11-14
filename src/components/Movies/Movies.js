@@ -91,7 +91,7 @@ function Movies() {
   function handleRemove(movie) {
     const movieId = savedMovies.find((item) => movie.id === item.movieId)._id;
     return mainApi
-      .remove(movieId)
+      .removeMovie(movieId)
       .then(() => {
         const movies = savedMovies.filter((item) => item._id !== movieId);
         setSavedMovies(movies);
