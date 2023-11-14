@@ -1,4 +1,4 @@
-import shortsDuration from '../constants/constants.js'
+import { shortsDuration } from '../constants/constants.js'
 
 function searchFilter(movie, req) {
 	const search = req.toLowerCase(); 
