@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     checkToken();
-  }, []);
+  }, [isSigned]);
 
   useEffect(() => {
     mainApi
