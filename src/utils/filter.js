@@ -1,10 +1,12 @@
+import shortsDuration from '../constants/constants.js'
+
 function searchFilter(movie, req) {
 	const search = req.toLowerCase(); 
 	const checkSearch = movie.nameRU.toLowerCase().includes(search);
 	return checkSearch;
 }
 
-function durationFilter(duration, short, correctDuration = 40) {
+function durationFilter(duration, short, correctDuration = shortsDuration) {
 	if (short && (duration <= correctDuration)) {
 		return true;
 	} else {
