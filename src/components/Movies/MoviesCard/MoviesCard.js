@@ -2,7 +2,7 @@ import MoviesCardRadio from './MoviesCardRadio/MoviesCardRadio';
 import MoviesCardButton from './MoviesCardButton/MoviesCardButton';
 import convertDuration from '../../../utils/convert';
 import './MoviesCard.css';
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 function MoviesCard({ movie, isSaved, onDelete, onSave }) {
@@ -20,10 +20,10 @@ function MoviesCard({ movie, isSaved, onDelete, onSave }) {
 
   useEffect(() => {
     if (isSaved) {
-      const res = isSaved.some((item) => (movie.id) === item.movieId)
+      const res = isSaved.some((item) => movie.id === item.movieId);
       setIsSave(res);
     }
-  }, [isSaved])
+  }, [isSaved]);
 
   return (
     <li className="movies-card">
@@ -49,7 +49,10 @@ function MoviesCard({ movie, isSaved, onDelete, onSave }) {
           </p>
         </div>
         {pathname === '/movies' ? (
-          <MoviesCardRadio checked={isSave ? true : false} onClick={handlerSaveMovie} />
+          <MoviesCardRadio
+            type={isSave ? 'movies-card__radio_active' : 'movies-radio__button'}
+            onClick={isSave ? handlerDeleteMovie : handlerSaveMovie}
+          />
         ) : (
           <MoviesCardButton onClick={handlerDeleteMovie} />
         )}

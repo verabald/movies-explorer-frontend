@@ -83,7 +83,7 @@ function Movies() {
     return mainApi
       .saveMovie(movie)
       .then((res) => {
-        setSavedMovies([...savedMovies, res]);
+        setSavedMovies([...savedMovies, res.data]);
       })
       .catch(console.error);
   }
