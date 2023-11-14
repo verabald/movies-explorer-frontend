@@ -146,8 +146,7 @@ function App() {
               isSigned ? <Navigate to="/movies" /> : <Navigate to="/signin" />
             }
           />
-          <Route path="*" element={<Navigate to="/pagenotfound" replace />} />
-          <Route path="/pagenotfound" element={<PageNotFound />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>
     </CurrentUserContext.Provider>
