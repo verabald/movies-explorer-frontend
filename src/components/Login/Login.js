@@ -60,6 +60,7 @@ function Login({ onSignIn }) {
               type="email"
               name="email"
               placeholder="pochta@yandex.ru"
+              pattern={"^\\S+@\\S+\\.\\S+$"}
               required
               onChange={handleChange}
             />

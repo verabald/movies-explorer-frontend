@@ -21,7 +21,7 @@ function Register() {
     mainApi
       .register(values)
       .then((res) => {
-        navigate('/signin', { replace: true });
+        navigate('/signin', { replace: true })
       })
       .catch((err) => {
         if (err === 'Что-то пошло не так: 409') {
@@ -79,6 +79,7 @@ function Register() {
               id="email"
               type="email"
               name="email"
+              pattern={"^\\S+@\\S+\\.\\S+$"}
               placeholder="pochta@yandex.ru"
               required
               onChange={handleChange}
