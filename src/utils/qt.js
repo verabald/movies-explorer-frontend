@@ -3,7 +3,7 @@ const screenTablet = 769;
 
 const qtMoviesMobile = { moviesOnPage: 5, moreMovies: 2 };
 const qtMoviesTablet = { moviesOnPage: 8, moreMovies: 2 };
-const qtMoviesDesktop = { moviesOnPage: 12, moreMovies: 3 };
+const qtMoviesDesktop = { moviesOnPage: 12, moreMovies: 4 };
 
 export function handleQtMovies() {
   const screen = window.innerWidth;
