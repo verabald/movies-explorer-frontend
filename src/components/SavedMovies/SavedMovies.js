@@ -44,7 +44,7 @@ function SavedMovies() {
   return (
     <main className="saved-movies">
       <SearchForm onSearch={handleSearch} />
-      <MoviesCardList movies={isSavedMovies} onDelete={handleRemove} />
+      <MoviesCardList movies={resultOfSearch} onDelete={handleRemove} />
       {isNothing ? (
         <span className="saved-movies__nothing">Ничего не найдено</span>
       ) : null}
