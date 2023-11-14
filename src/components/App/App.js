@@ -40,7 +40,6 @@ function App() {
   function checkToken() {
     const currentToken = localStorage.getItem('token');
     if (currentToken) {
-      console.log(currentToken);
       mainApi
         .checkToken(currentToken)
         .then((res) => {

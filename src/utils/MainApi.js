@@ -71,7 +71,7 @@ class MainApi {
     });
   }
 
-  saveMovie(movie) { console.log(movie);
+  saveMovie(movie) {
     return this._request(`${this._url}/movies`, {
       method: 'POST',
       headers: {
