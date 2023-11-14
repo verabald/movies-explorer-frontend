@@ -80,6 +80,7 @@ function Register() {
               type="email"
               name="email"
               placeholder="pochta@yandex.ru"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               required
               onChange={handleChange}
             />
