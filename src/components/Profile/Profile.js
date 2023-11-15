@@ -7,10 +7,10 @@ import Header from '../Header/Header';
 import useFormWithValidation from '../../utils/validation.js';
 
 function Profile({ onSignOut, onEdit, isSigned, statusEdit }) {
-  const { values, handleChange, resetFrom, isValid } = useFormWithValidation();
+  const currentUser = useContext(CurrentUserContext);
+  const { values, handleChange, resetFrom, isValid } = useFormWithValidation(currentUser);
   const { text } = statusEdit;
 
-  const currentUser = useContext(CurrentUserContext);
   const [isEdit, setIsEdit] = useState(false);
   const [isStatus, setIsStatus] = useState('');
   const isDisabled = !isValid;
@@ -21,7 +21,7 @@ function Profile({ onSignOut, onEdit, isSigned, statusEdit }) {
   function handleEdit() {
     resetFrom(currentUser, {}, false);
     setIsEdit(true);
-    setIsStatus('')
+    setIsStatus('');
   }
 
   function handleSubmit(evt) {
@@ -52,7 +52,7 @@ function Profile({ onSignOut, onEdit, isSigned, statusEdit }) {
             <label className="profile__input-title">
               Имя
               <input
-                value={values.name || currentUser.name}
+                value={values.name || ''}
                 className={typeInput}
                 id="name"
                 type="text"
@@ -68,7 +68,7 @@ function Profile({ onSignOut, onEdit, isSigned, statusEdit }) {
             <label className="profile__input-title">
               E-mail
               <input
-                value={values.email || currentUser.email}
+                value={values.email || ''}
                 className={typeInput}
                 id="email"
                 type="email"
@@ -78,11 +78,7 @@ function Profile({ onSignOut, onEdit, isSigned, statusEdit }) {
                 disabled={!isEdit}
               />
             </label>
-            {!isEdit && (
-              <span className="profile__message">
-                {isStatus}
-              </span>
-            )}
+            {!isEdit && <span className="profile__message">{isStatus}</span>}
             {isEdit ? (
               <button
                 className={typeButton}

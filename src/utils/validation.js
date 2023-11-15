@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 
-function useFormWithValidation() {
+function useFormWithValidation(currentUser) {
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(false);
@@ -11,7 +11,7 @@ function useFormWithValidation() {
     const name = input.name;
     setValues({ ...values, [name]: value });
     setErrors({ ...errors, [name]: input.validationMessage });
-    setIsValid(input.closest('form').checkValidity());
+    setIsValid(input.closest('form').checkValidity() && value !== currentUser[name]);
   }
 
   const resetFrom = useCallback(
