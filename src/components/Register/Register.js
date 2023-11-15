@@ -6,7 +6,7 @@ import mainApi from '../../utils/MainApi';
 
 import useFormWithValidation from '../../utils/validation.js';
 
-function Register() {
+function Register({ onLogin }) {
   const navigate = useNavigate();
 
   const { values, handleChange, resetFrom, errors, isValid } =
@@ -21,7 +21,9 @@ function Register() {
     mainApi
       .register(values)
       .then((res) => {
-        navigate('/signin', { replace: true })
+        if (res) {
+          onLogin(values);
+        }
       })
       .catch((err) => {
         if (err === 'Что-то пошло не так: 409') {
@@ -79,7 +81,7 @@ function Register() {
               id="email"
               type="email"
               name="email"
-              pattern={"^\\S+@\\S+\\.\\S+$"}
+              pattern={'^\\S+@\\S+\\.\\S+$'}
               placeholder="pochta@yandex.ru"
               required
               onChange={handleChange}

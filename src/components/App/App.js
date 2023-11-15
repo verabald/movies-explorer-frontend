@@ -22,6 +22,7 @@ function App() {
   const [isMoviesSaved, setIsMoviesSaved] = useState([]);
   const [isSigned, setIsSigned] = useState(false);
 
+  const [statusLog, setStatusLog] = useState({});
   const [statusEdit, setStatusEdit] = useState({});
 
   useEffect(() => {
@@ -49,6 +50,26 @@ function App() {
         })
         .catch(console.error);
     }
+  }
+
+  function handleLogin(values) {
+    mainApi
+      .login(values)
+      .then((res) => {
+        localStorage.setItem('token', res.token);
+        handleSignIn(true);
+      })
+      .catch((err) => {
+        if (err === 'Что-то пошло не так: 401') {
+          setStatusLog({
+            text: 'Неверный логин или пароль',
+          });
+        } else {
+          setStatusLog({
+            text: 'При входе произошла ошибка',
+          });
+        }
+      });
   }
 
   function handleProfileEdit(user) {
@@ -100,11 +121,26 @@ function App() {
             }
           ></Route>
 
-          <Route path="/signup" element={isSigned ? <Navigate to="/" /> : <Register />}></Route>
+          <Route
+            path="/signup"
+            element={
+              isSigned ? (
+                <Navigate to="/" />
+              ) : (
+                <Register onLogin={handleLogin} />
+              )
+            }
+          ></Route>
 
           <Route
             path="/signin"
-            element={isSigned ? <Navigate to="/" /> : <Login onSignIn={handleSignIn} />}
+            element={
+              isSigned ? (
+                <Navigate to="/" />
+              ) : (
+                <Login onLogin={handleLogin} status={statusLog} />
+              )
+            }
           ></Route>
 
           <Route

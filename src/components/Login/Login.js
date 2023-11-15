@@ -1,38 +1,19 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import './Login.css';
 import logo from '../../images/header-logo.svg';
-import mainApi from '../../utils/MainApi';
 
 import useFormWithValidation from '../../utils/validation.js';
 
-function Login({ onSignIn }) {
+function Login({ onLogin, status }) {
   const { values, handleChange, resetFrom, errors, isValid } =
     useFormWithValidation();
-  const [statusLog, setStatusLog] = useState({});
-  const { text } = statusLog;
   const isDisabled = !isValid;
+  const { text } = status;
 
   function onLog(evt) {
     evt.preventDefault();
-
-    mainApi
-      .login(values)
-      .then((res) => {
-        localStorage.setItem('token', res.token);
-        onSignIn(true);
-      })
-      .catch((err) => {
-        if (err === 'Что-то пошло не так: 401') {
-          setStatusLog({
-            text: 'Неверный логин или пароль',
-          });
-        } else {
-          setStatusLog({
-            text: 'При входе произошла ошибка',
-          });
-        }
-      });
+    onLogin(values);
   }
 
   useEffect(() => {
@@ -60,7 +41,7 @@ function Login({ onSignIn }) {
               type="email"
               name="email"
               placeholder="pochta@yandex.ru"
-              pattern={"^\\S+@\\S+\\.\\S+$"}
+              pattern={'^\\S+@\\S+\\.\\S+$'}
               required
               onChange={handleChange}
             />
