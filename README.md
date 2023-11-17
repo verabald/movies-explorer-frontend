@@ -1,5 +1,14 @@
-Макет: dark-5
-Ссылка: https://www.figma.com/file/6FMWkB94wE7KTkcCgUXtnC/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82?type=design&node-id=1%3A11614&mode=design&t=Lrb8qCJSSCVtf7f8-1
-
-Ссылка на pull request: https://github.com/verabald/movies-explorer-frontend/pull/2
-Ссылка на деплой: https://movie.verbaldi.nomoredomainsrocks.ru
+<h1 align="center">Проект "Фильмопоиск"</h1>
+<p><a href="https://movie.verbaldi.nomoredomainsrocks.ru">Посмотреть деплой</a></p>
+<p><b>О чём?</b> Интерактивная страница, на которой можно авторизоваться, искать фильмы, добавлять их в избранное и редактировать свой профиль.</p>
+<p><b>Вот что было сделано:</b>
+:small_orange_diamond: настроена инфраструктура и создан сервер на express;
+:small_orange_diamond: подключена база данных, созданы схемы и модели ресурсов API;
+:small_orange_diamond: реализовано логирование, аутентификация и авторизация на сервере;
+:small_orange_diamond: бэкенд задеплоен на Яндекс Облако;
+:small_orange_diamond: свёрстаны компоненты на React, разметка портирована в его формат;
+:small_orange_diamond: описана логика и вёрстка страниц регистрации, логина, редактирования профиля, сохранённых фильмов;
+:small_orange_diamond: реализованы асинхронные GET- и POST-запросы к API;
+:small_orange_diamond: проработаны авторизованные и неавторизованные состояния, сохранение фильмов в профиле;
+:small_orange_diamond: полученные фильмы фильтруются на стороне клиента.</p>
+<p><b>Планы на будущее?</b> Добавление рейтинга фильмам.</p>
