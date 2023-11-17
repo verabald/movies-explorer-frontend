@@ -1,31 +1,18 @@
-.movies-card__radio-input_type_default {
-	width: 0;
-	height: 0;
-	position: absolute;
-	opacity: 0;
+.movies-card__radio {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  transition: all 0.2s ease-out;
+  background-image: url('../../../../images/movies-saveoff.svg');
 }
 
-.movies-card__radio-input_type_design {
-	width: 16px;
-	height: 16px;
-	position: relative;
-	display: inline-block;
-    cursor: pointer;
-}
-
-.movies-card__radio-input_type_design::before {
-    padding: 5px 0 0 0;
-	width: 17px;
-	height: 17px;
-	position: absolute;
-	content: '';
-	background-image: url('../../../../images/movies-saveoff.svg');
-	background-position: center;
-    background-repeat: no-repeat;
-	transition: all .2s ease-out;
-}
-
-
-.movies-card__radio-input_type_default:checked + .movies-card__radio-input_type_design::before {
-	background-image: url('../../../../images/movies-saveon.svg');
+.movies-card__radio_active {
+  background-image: url('../../../../images/movies-saveon.svg');
 }

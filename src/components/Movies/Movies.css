@@ -15,6 +15,17 @@
 	cursor: pointer;
 }
 
+.movies__nothing {
+	margin: 20px;
+    display: block;
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 15px;
+	letter-spacing: 0px;
+	text-align: center;
+}
+
 @media (hover: hover) {
     .movies__button:hover {
         opacity: .8;

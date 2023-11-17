@@ -100,6 +100,23 @@
   cursor: pointer;
 }
 
+.login__button:disabled  {
+  background-color: #F8F8F8;
+  color: #C2C2C2;
+}
+
+.login__message {
+  max-width: 320px;
+  min-height: 14px;
+  margin: 0 auto 20px;
+  padding: 0;
+  color: #ee3465;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0em;
+}
+
 .login__caption {
   margin: 0;
   padding: 0;
