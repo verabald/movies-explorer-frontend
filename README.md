@@ -1,5 +1,4 @@
 <h1 align="center">Проект "Фильмопоиск" :movie_camera:</h1>
-<p><a href="https://movie.verbaldi.nomoredomainsrocks.ru">Посмотреть деплой</a></p>
 <p>:large_orange_diamond:<b>О чём?</b> Интерактивная страница, на которой можно авторизоваться, искать фильмы, добавлять их в избранное и редактировать свой профиль.</p>
 <p>:large_orange_diamond:<b>Вот что было сделано:</b>
 <p>:small_orange_diamond: настроена инфраструктура и создан сервер на express;</p>
